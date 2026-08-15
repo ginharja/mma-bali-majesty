@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
             ['id' => 'P18', 'name' => 'Cold Brew Coffee', 'price' => 40000, 'cost' => 12000, 'stock' => 999, 'icon' => '☕', 'category' => 'F&B', 'description' => '18-hour cold brew.'],
             ['id' => 'P19', 'name' => 'Mineral Water 1L', 'price' => 15000, 'cost' => 5000, 'stock' => 999, 'icon' => '💧', 'category' => 'F&B', 'description' => 'Stay hydrated.'],
             ['id' => 'P20', 'name' => 'Protein Bar', 'price' => 35000, 'cost' => 15000, 'stock' => 120, 'icon' => '🍫', 'category' => 'F&B', 'description' => '20g protein snack.'],
-            ['id' => 'E1', 'name' => 'MAJESTY Throwdown 2026', 'price' => 350000, 'cost' => 50000, 'stock' => 100, 'icon' => '🏆', 'category' => 'Events', 'description' => 'Annual fitness competition.'],
+            ['id' => 'E1', 'name' => 'MAJESTY Throwdown 2026', 'price' => 350000, 'cost' => 50000, 'stock' => 100, 'icon' => '🏆', 'category' => 'Events', 'description' => 'Fitness competition terbuka untuk semua level.'],
             ['id' => 'E2', 'name' => 'Nutrition Workshop', 'price' => 200000, 'cost' => 30000, 'stock' => 50, 'icon' => '🥗', 'category' => 'Events', 'description' => 'Learn macros & diets.'],
             ['id' => 'E3', 'name' => 'Yoga Retreat Pass', 'price' => 1500000, 'cost' => 800000, 'stock' => 20, 'icon' => '🌅', 'category' => 'Events', 'description' => 'Weekend getaway in Ubud.'],
             ['id' => 'E4', 'name' => 'Boxing Seminar', 'price' => 250000, 'cost' => 50000, 'stock' => 40, 'icon' => '🥊', 'category' => 'Events', 'description' => 'Technique clinic with Pro.'],
@@ -169,10 +169,8 @@ class DatabaseSeeder extends Seeder
             $trainerName = $trainer ? $trainer->name : 'MAJESTY Trainer';
             $randomDate = date('D, d M', strtotime('+' . rand(1, 20) . ' days'));
 
-            if ($member->plan && $member->plan !== 'Per Visit') {
-                $planPrice = 350000;
-                if ($member->plan == 'Quarterly') $planPrice = 900000;
-                if ($member->plan == 'Annual') $planPrice = 3000000;
+            if ($member->plan && $member->plan !== 'Per Kedatangan') {
+                $planPrice = 350000; // Bulanan
 
                 // Tanggal terakhir bayar disimulasi acak antara 5-30 hari yang lalu
                 $lastPayDate = date('d M Y', strtotime('-' . rand(5, 30) . ' days'));

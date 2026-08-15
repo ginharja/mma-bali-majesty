@@ -101,7 +101,7 @@ const PRODUCTS_INIT = [
   { id: "P8", name: "Resistance Bands Set", price: 280000, cost: 130000, stock: 14, icon: "🔴", category: "Equipment", description: "5-band set from light to extra heavy. Latex-free.", img: "🔴" },
   { id: "P9", name: "Jump Rope Pro", price: 180000, cost: 80000, stock: 22, icon: "🪢", category: "Equipment", description: "Speed rope with ball-bearing handles for double-unders.", img: "🪢" },
   // Events
-  { id: "P10", name: "MAJESTY Throwdown 2026", price: 350000, cost: 50000, stock: 50, icon: "🏆", category: "Events", description: "Annual fitness competition. All levels welcome. May 24–25, 2025. Includes T-shirt & medal.", img: "🏆" },
+  { id: "P10", name: "MAJESTY Throwdown 2026", price: 350000, cost: 50000, stock: 50, icon: "🏆", category: "Events", description: "Fitness competition terbuka untuk semua level. May 24–25, 2025. Includes T-shirt & medal.", img: "🏆" },
   { id: "P11", name: "Nutrition Workshop", price: 200000, cost: 30000, stock: 20, icon: "🥗", category: "Events", description: "3-hour workshop on sports nutrition with certified dietitian. Apr 12, 2025.", img: "🥗" },
   // F&B
   { id: "P12", name: "Protein Smoothie", price: 55000, cost: 20000, stock: 99, icon: "🥛", category: "F&B", description: "Fresh blended protein smoothie. 5 flavours. Pick up at café.", img: "🥛" },
@@ -4978,9 +4978,9 @@ function FullReportsModal({branches,members,classes,bookings,sales,trainers,onCl
               {l:"Total Registered", v:filtM.length},
               {l:"Active Members",   v:activeMembers},
               {l:"Inactive Members", v:filtM.filter(m=>m.status==="inactive").length},
-              {l:"Monthly Plan",     v:filtM.filter(m=>m.plan==="Monthly").length},
-              {l:"Annual Plan",      v:filtM.filter(m=>m.plan==="Annual").length},
-              {l:"Quarterly Plan",   v:filtM.filter(m=>m.plan==="Quarterly").length},
+              {l:"Bulanan",          v:filtM.filter(m=>m.plan==="Bulanan").length},
+              
+              
               {l:"Per Kedatangan",        v:filtM.filter(m=>m.plan==="Per Kedatangan").length},
               {l:"Avg Classes/Member",v:filtM.length>0?Math.round(filtM.reduce((s,m)=>s+(m.totalClasses||0),0)/filtM.length):0},
             ].map((s,i)=>(
