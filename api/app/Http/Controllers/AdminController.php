@@ -179,13 +179,27 @@ class AdminController extends Controller
     public function uploadPhotos(Request $request, $id)
     {
         $product = Product::find($id);
-        if($product) {
-            // Menerima array Base64 string dari React
-            $product->images = $request->images;
-            $product->save();
-            return response()->json(['status' => 'success', 'data' => $product]);
+        if(!$product) {
+            return response()->json(['status' => 'error', 'message' => 'Produk tidak ditemukan'], 404);
         }
-        return response()->json(['status' => 'error', 'message' => 'Produk tidak ditemukan'], 404);
+
+        // Validasi: harus array base64, maks 8 gambar, masing-masing maks ~1.5MB
+        $images = $request->input('images');
+        if (!is_array($images) || count($images) > 8) {
+            return response()->json(['status' => 'error', 'message' => 'images harus array maksimal 8 foto'], 422);
+        }
+        foreach ($images as $img) {
+            if (!is_string($img) || strlen($img) > 2000000) {
+                return response()->json(['status' => 'error', 'message' => 'Ukuran foto melebihi batas (maks 1.5MB per foto)'], 422);
+            }
+            if (!preg_match('#^data:image/(jpeg|png|webp|gif);base64,#i', $img) && !preg_match('#^[A-Za-z0-9+/=]+$#', $img)) {
+                return response()->json(['status' => 'error', 'message' => 'Format foto tidak valid (base64)'], 422);
+            }
+        }
+
+        $product->images = $images;
+        $product->save();
+        return response()->json(['status' => 'success', 'data' => $product]);
     }
 
     // --- MODUL KEUANGAN ---

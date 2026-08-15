@@ -18,7 +18,7 @@ const T = {
   bg:"#05050A",surface:"#0A0A15",card:"#111122",cardHi:"#18182E",
   border:"#1E1E30",borderHi:"#2E2E48",
   text:"#FFFFFF",muted:"#8E8EAF",dim:"#363658",
-  lime:"#CCFF00",cyan:"#00E5FF",orange:"#FF5C00",
+  lime:"#CCFF00",cyan:"#10B981",orange:"#FF5C00",
   green:"#00FF85",red:"#FF3131",yellow:"#FFD700",purple:"#B39DDB",blue:"#4FC3F7",
 };
 const F={display:"'Bebas Neue','Impact',sans-serif",body:"'DM Sans','Segoe UI',sans-serif",mono:"'JetBrains Mono',monospace"};
@@ -56,13 +56,13 @@ const TRAINERS_INIT=[
 const GYM_SETTINGS_INIT = [];
 
 const CLASSES_INIT=[
-  {id:"C1", branchId:"B1",name:"HIIT INFERNO",        trainerId:"T1",time:"06:00",day:"Mon",duration:"45 min",slots:3, total:15,icon:"🔥",intensity:"HIGH",category:"HIIT",              color:"#FF3131",status:"active"},
+  {id:"C1", branchId:"B1",name:"HIIT INFERNO",        trainerId:"T1",time:"06:00",day:"Mon",duration:"45 min",slots:3, total:15,icon:"🔥",intensity:"HIGH",category:"HIIT",              color:"#10B981",status:"active"},
   {id:"C2", branchId:"B1",name:"FLEXIBILITY FLOW",    trainerId:"T2",time:"07:30",day:"Mon",duration:"60 min",slots:8, total:12,icon:"🧘",intensity:"LOW", category:"Flexibility",      color:"#B39DDB",status:"active"},
   {id:"C3", branchId:"B4",name:"MIND & BODY HEALING", trainerId:"T8",time:"18:00",day:"Tue",duration:"60 min",slots:6, total:12,icon:"🌿",intensity:"LOW", category:"Mind & Body Healing",color:"#00FF85",status:"active"},
   {id:"C4", branchId:"B2",name:"TAEKWONDO",           trainerId:"T9",time:"16:00",day:"Mon",duration:"60 min",slots:8, total:15,icon:"🥋",intensity:"MED", category:"Taekwondo",         color:"#4FC3F7",status:"active"},
-  {id:"C5", branchId:"B2",name:"KICKBOXING PRO",      trainerId:"T3",time:"07:00",day:"Mon",duration:"60 min",slots:5, total:10,icon:"🦵",intensity:"HIGH",category:"Kickboxing",         color:"#FF5C00",status:"active"},
-  {id:"C6", branchId:"B2",name:"BOXING PRO",          trainerId:"T3",time:"07:00",day:"Wed",duration:"60 min",slots:5, total:10,icon:"🥊",intensity:"HIGH",category:"Boxing",            color:"#FF3131",status:"active"},
-  {id:"C7", branchId:"B1",name:"MMA COMBAT",          trainerId:"T3",time:"19:00",day:"Thu",duration:"90 min",slots:6, total:12,icon:"⚔️",intensity:"HIGH",category:"MMA",               color:"#FFD700",status:"active"},
+  {id:"C5", branchId:"B2",name:"KICKBOXING PRO",      trainerId:"T3",time:"07:00",day:"Mon",duration:"60 min",slots:5, total:10,icon:"🦵",intensity:"HIGH",category:"Kickboxing",         color:"#14B8A6",status:"active"},
+  {id:"C6", branchId:"B2",name:"BOXING PRO",          trainerId:"T3",time:"07:00",day:"Wed",duration:"60 min",slots:5, total:10,icon:"🥊",intensity:"HIGH",category:"Boxing",            color:"#059669",status:"active"},
+  {id:"C7", branchId:"B1",name:"MMA COMBAT",          trainerId:"T3",time:"19:00",day:"Thu",duration:"90 min",slots:6, total:12,icon:"⚔️",intensity:"HIGH",category:"MMA",               color:"#2DD4BF",status:"active"},
   {id:"C8", branchId:"B1",name:"WRESTLING",           trainerId:"T10",time:"17:00",day:"Tue",duration:"60 min",slots:8, total:12,icon:"🤼",intensity:"MED", category:"Wrestling",         color:"#B39DDB",status:"active"},
   {id:"CO1", branchId:"ONLINE",name:"VIRTUAL HIIT",     trainerId:"T1",time:"10:00",day:"Mon",duration:"45 min",slots:45, total:50,icon:"💻",intensity:"HIGH",category:"HIIT", color:T.blue,status:"active"},
   {id:"CO2", branchId:"ONLINE",name:"HOME FLEXIBILITY", trainerId:"T2",time:"19:00",day:"Tue",duration:"60 min",slots:20, total:50,icon:"🧘",intensity:"LOW", category:"Flexibility", color:T.purple,status:"active"},
