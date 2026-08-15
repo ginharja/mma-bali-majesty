@@ -1,6 +1,6 @@
-# mma majesty BALI 🥊
+# MAJESTY BALI 🥊
 
-Website + mobile app untuk **mma majesty BALI** — akademi bela diri kombat (MMA, Muay Thai, Kickboxing, Savate, Boxing) di Bali.
+Website + mobile app untuk **MAJESTY BALI** — akademi bela diri kombat (HIIT, Flexibility, Mind & Body Healing, Taekwondo, Kickboxing, Boxing, MMA, Wrestling) di Bali.
 
 Proyek ini menggabungkan:
 - **`mma-theme`** (tema WordPress Majesty MMA — gaya visual *kombat*: merah neon + emas, font Teko/Inter, konten Bahasa Indonesia)
@@ -18,6 +18,7 @@ Target domain: **learnmmabalimajesty.com** · Hosting: cPanel (digita50_economic
 | `web/` | Situs utama — **PWA** (bisa di-install sebagai app di HP tanpa Play Store) | HTML + CSS + JS murni |
 | `app/` | Aplikasi anggota (member app) — bisa dibangun jadi **APK Android** (sideload, tanpa Play Store) | Ionic + Capacitor + React + Vite |
 | `api/` | Backend REST API (opsional, untuk data dinamis) | Laravel (PHP) |
+| `wordpress/` | Tema WordPress `mma-theme` yang sudah disesuaikan (branding + kelas) | PHP/WordPress |
 
 ```
 mma-bali-majesty/
@@ -62,9 +63,10 @@ npx serve .          # lalu buka http://localhost:3000
 
 | Yang mau diubah | File / lokasi |
 |---|---|
-| Nomor WhatsApp admin | `assets/js/main.js` → konstanta `ADMIN_WA` (2 tempat di HTML juga) |
+| Nomor WhatsApp admin | `assets/js/config.js` → `wa` (satu-satunya tempat) |
 | Harga / biaya (contoh) | `index.html` — cari `fee-card`, `plan-card`, `tiket-card` |
 | Agenda / jadwal event | `index.html` — section `#agenda` |
+| Daftar 8 kelas | `assets/js/config.js` → `classes` (otomatis render ke kartu & form) |
 | Warna tema | `assets/css/style.css` → variabel di `:root` (`--red-neon`, `--gold-premium`, dll.) |
 | Kontak / alamat | `index.html` — section `#kontak` |
 | Teks & copywriting | `index.html` — semua section |
@@ -146,7 +148,9 @@ Situs `web/` adalah **statis murni** — paling ringan dan paling aman untuk hos
 
 ## ✅ Status & Yang Perlu Dilengkapi
 
-- [x] Situs publik + PWA (desktop & mobile, offline, installable)
+- [x] Situs publik + PWA (desktop & mobile, offline, installable) — brand MAJESTY BALI, 8 kelas resmi
+- [x] Konfigurasi terpusat `config.js` (anti-hardcode: brand, kontak, kelas)
+- [x] Tema WordPress live sudah di-update via FTP (branding MAJESTY BALI)
 - [x] Form pendaftaran atlet & kontak (kirim via WhatsApp)
 - [x] Struktur repo: web + app + api
 - [ ] Ganti nomor WhatsApp admin (`ADMIN_WA`) & alamat dojo asli
@@ -158,4 +162,4 @@ Situs `web/` adalah **statis murni** — paling ringan dan paling aman untuk hos
 
 ---
 
-© 2026 mma majesty. Membangun generasi petarung tangguh dan berprestasi.
+© 2026 MAJESTY BALI. Membangun generasi petarung tangguh dan berprestasi.

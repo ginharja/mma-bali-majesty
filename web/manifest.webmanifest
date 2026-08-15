@@ -1,7 +1,7 @@
 {
-  "name": "mma majesty BALI",
-  "short_name": "mma majesty",
-  "description": "Akademi bela diri kombat di Bali — MMA, Muay Thai, Kickboxing, Savate & Boxing. Daftar kejuaraan, keanggotaan, dan tiket arena.",
+  "name": "MAJESTY BALI — Kombat & Fitness Camp",
+  "short_name": "MAJESTY BALI",
+  "description": "Kombat & Fitness Camp di Bali — HIIT, Flexibility, Mind & Body Healing, Taekwondo, Kickboxing, Boxing, MMA, Wrestling.",
   "lang": "id",
   "start_url": "./",
   "scope": "./",
@@ -9,7 +9,11 @@
   "orientation": "portrait",
   "background_color": "#070707",
   "theme_color": "#070707",
-  "categories": ["sports", "fitness", "lifestyle"],
+  "categories": [
+    "sports",
+    "fitness",
+    "lifestyle"
+  ],
   "icons": [
     {
       "src": "assets/icons/icon-192.png",

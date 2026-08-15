@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
         // 1. DATA PENGGUNA (ADMIN, TRAINER, MEMBER)
         // ====================================================================
         $users = [
-            ['id' => 1, 'name'=>'Super Admin', 'email'=>'admin@gym.com', 'password'=>Hash::make('123'), 'role'=>'admin', 'avatar'=>'🛡️', 'plan'=>null, 'branch_id'=>null, 'streak'=>0, 'join_date'=>null, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 811-0000-0001', 'dob'=>'01 Jan 1985', 'address'=>'HQ RAW Gym, Bali', 'emergency_contact'=>null, 'status'=>'active'],
+            ['id' => 1, 'name'=>'Super Admin', 'email'=>'admin@gym.com', 'password'=>Hash::make('123'), 'role'=>'admin', 'avatar'=>'🛡️', 'plan'=>null, 'branch_id'=>null, 'streak'=>0, 'join_date'=>null, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 811-0000-0001', 'dob'=>'01 Jan 1985', 'address'=>'HQ MAJESTY BALI, Bali', 'emergency_contact'=>null, 'status'=>'active'],
             ['id' => 2, 'name'=>'Coach Hendra', 'email'=>'coach@gym.com', 'password'=>Hash::make('123'), 'role'=>'trainer', 'avatar'=>'🏋️', 'plan'=>null, 'branch_id'=>'B1', 'streak'=>0, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 878-1111-2222', 'address'=>'Uluwatu', 'trainer_id'=>'T1', 'status'=>'active'],
             ['id' => 3, 'name'=>'Sari Wijaya', 'email'=>'sari@gym.com', 'password'=>Hash::make('123'), 'role'=>'trainer', 'avatar'=>'🧘', 'plan'=>null, 'branch_id'=>'B1', 'streak'=>0, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 815-2222-3333', 'address'=>'Seminyak', 'trainer_id'=>'T2', 'status'=>'active'],
             ['id' => 4, 'name'=>'Reza Kurnia', 'email'=>'reza@gym.com', 'password'=>Hash::make('123'), 'role'=>'trainer', 'avatar'=>'🥊', 'plan'=>null, 'branch_id'=>'B2', 'streak'=>0, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 819-3333-4444', 'address'=>'Canggu', 'trainer_id'=>'T3', 'status'=>'active'],
@@ -59,17 +59,17 @@ class DatabaseSeeder extends Seeder
         // 2. DATA PRODUK (20 ITEM TOKO + 5 EVENT)
         // ====================================================================
         $products = [
-            ['id' => 'P1', 'name' => 'Oversized RAW Tee', 'price' => 250000, 'cost' => 120000, 'stock' => 55, 'icon' => '👕', 'category' => 'Merchandise', 'description' => 'Premium cotton.'],
-            ['id' => 'P2', 'name' => 'RAW Gym Bag', 'price' => 450000, 'cost' => 220000, 'stock' => 30, 'icon' => '🎒', 'category' => 'Merchandise', 'description' => 'Durable gym bag.'],
-            ['id' => 'P3', 'name' => 'RAW Cap', 'price' => 150000, 'cost' => 60000, 'stock' => 60, 'icon' => '🧢', 'category' => 'Merchandise', 'description' => 'Snapback cap.'],
-            ['id' => 'P4', 'name' => 'RAW Hoodie Pro', 'price' => 550000, 'cost' => 300000, 'stock' => 20, 'icon' => '🧥', 'category' => 'Merchandise', 'description' => 'Warm up hoodie.'],
+            ['id' => 'P1', 'name' => 'Oversized MAJESTY Tee', 'price' => 250000, 'cost' => 120000, 'stock' => 55, 'icon' => '👕', 'category' => 'Merchandise', 'description' => 'Premium cotton.'],
+            ['id' => 'P2', 'name' => 'MAJESTY Gym Bag', 'price' => 450000, 'cost' => 220000, 'stock' => 30, 'icon' => '🎒', 'category' => 'Merchandise', 'description' => 'Durable gym bag.'],
+            ['id' => 'P3', 'name' => 'MAJESTY Cap', 'price' => 150000, 'cost' => 60000, 'stock' => 60, 'icon' => '🧢', 'category' => 'Merchandise', 'description' => 'Snapback cap.'],
+            ['id' => 'P4', 'name' => 'MAJESTY Hoodie Pro', 'price' => 550000, 'cost' => 300000, 'stock' => 20, 'icon' => '🧥', 'category' => 'Merchandise', 'description' => 'Warm up hoodie.'],
             ['id' => 'P5', 'name' => 'Gym Towel Microfiber', 'price' => 90000, 'cost' => 40000, 'stock' => 100, 'icon' => '🧻', 'category' => 'Merchandise', 'description' => 'Quick dry.'],
-            ['id' => 'P6', 'name' => 'RAW Whey Isolate', 'price' => 850000, 'cost' => 600000, 'stock' => 85, 'icon' => '🥤', 'category' => 'Supplements', 'description' => '25g protein per serving.'],
+            ['id' => 'P6', 'name' => 'MAJESTY Whey Isolate', 'price' => 850000, 'cost' => 600000, 'stock' => 85, 'icon' => '🥤', 'category' => 'Supplements', 'description' => '25g protein per serving.'],
             ['id' => 'P7', 'name' => 'Pre-Workout Monster', 'price' => 450000, 'cost' => 310000, 'stock' => 40, 'icon' => '⚡', 'category' => 'Supplements', 'description' => 'High-stim pre-workout.'],
             ['id' => 'P8', 'name' => 'BCAA Recovery', 'price' => 320000, 'cost' => 200000, 'stock' => 50, 'icon' => '💊', 'category' => 'Supplements', 'description' => 'Essential amino acids.'],
             ['id' => 'P9', 'name' => 'Creatine Monohydrate', 'price' => 250000, 'cost' => 150000, 'stock' => 60, 'icon' => '💪', 'category' => 'Supplements', 'description' => 'Pure creatine 5g/serving.'],
             ['id' => 'P10', 'name' => 'Mass Gainer Elite', 'price' => 950000, 'cost' => 700000, 'stock' => 15, 'icon' => '🏋️', 'category' => 'Supplements', 'description' => '1000 kcal per serving.'],
-            ['id' => 'P11', 'name' => 'RAW Lifting Belt', 'price' => 650000, 'cost' => 400000, 'stock' => 25, 'icon' => '🏋️', 'category' => 'Equipment', 'description' => 'Leather powerlifting belt.'],
+            ['id' => 'P11', 'name' => 'MAJESTY Lifting Belt', 'price' => 650000, 'cost' => 400000, 'stock' => 25, 'icon' => '🏋️', 'category' => 'Equipment', 'description' => 'Leather powerlifting belt.'],
             ['id' => 'P12', 'name' => 'Resistance Bands Set', 'price' => 280000, 'cost' => 130000, 'stock' => 40, 'icon' => '🔴', 'category' => 'Equipment', 'description' => '5-band set.'],
             ['id' => 'P13', 'name' => 'Speed Jump Rope', 'price' => 180000, 'cost' => 80000, 'stock' => 50, 'icon' => '🪢', 'category' => 'Equipment', 'description' => 'Ball-bearing handles.'],
             ['id' => 'P14', 'name' => 'Boxing Gloves 14oz', 'price' => 750000, 'cost' => 450000, 'stock' => 10, 'icon' => '🥊', 'category' => 'Equipment', 'description' => 'Premium sparring gloves.'],
@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
             ['id' => 'P18', 'name' => 'Cold Brew Coffee', 'price' => 40000, 'cost' => 12000, 'stock' => 999, 'icon' => '☕', 'category' => 'F&B', 'description' => '18-hour cold brew.'],
             ['id' => 'P19', 'name' => 'Mineral Water 1L', 'price' => 15000, 'cost' => 5000, 'stock' => 999, 'icon' => '💧', 'category' => 'F&B', 'description' => 'Stay hydrated.'],
             ['id' => 'P20', 'name' => 'Protein Bar', 'price' => 35000, 'cost' => 15000, 'stock' => 120, 'icon' => '🍫', 'category' => 'F&B', 'description' => '20g protein snack.'],
-            ['id' => 'E1', 'name' => 'RAW Throwdown 2026', 'price' => 350000, 'cost' => 50000, 'stock' => 100, 'icon' => '🏆', 'category' => 'Events', 'description' => 'Annual fitness competition.'],
+            ['id' => 'E1', 'name' => 'MAJESTY Throwdown 2026', 'price' => 350000, 'cost' => 50000, 'stock' => 100, 'icon' => '🏆', 'category' => 'Events', 'description' => 'Annual fitness competition.'],
             ['id' => 'E2', 'name' => 'Nutrition Workshop', 'price' => 200000, 'cost' => 30000, 'stock' => 50, 'icon' => '🥗', 'category' => 'Events', 'description' => 'Learn macros & diets.'],
             ['id' => 'E3', 'name' => 'Yoga Retreat Pass', 'price' => 1500000, 'cost' => 800000, 'stock' => 20, 'icon' => '🌅', 'category' => 'Events', 'description' => 'Weekend getaway in Ubud.'],
             ['id' => 'E4', 'name' => 'Boxing Seminar', 'price' => 250000, 'cost' => 50000, 'stock' => 40, 'icon' => '🥊', 'category' => 'Events', 'description' => 'Technique clinic with Pro.'],
@@ -150,7 +150,7 @@ class DatabaseSeeder extends Seeder
         Notification::create([
             'user_id' => 'all',
             'type'    => 'broadcast',
-            'title'   => 'Welcome to RAW Gym! 📢',
+            'title'   => 'Welcome to MAJESTY BALI! 📢',
             'message' => 'Push your limits today! Check out our new class schedule.',
             'is_read' => false
         ]);
@@ -161,7 +161,7 @@ class DatabaseSeeder extends Seeder
             // --- A. RANDOM BOOKING KELAS ---
             $cls = $classes->random();
             $trainer = User::where('trainer_id', $cls->trainer_id)->first();
-            $trainerName = $trainer ? $trainer->name : 'RAW Trainer';
+            $trainerName = $trainer ? $trainer->name : 'MAJESTY Trainer';
             $randomDate = date('D, d M', strtotime('+' . rand(1, 20) . ' days'));
 
             if ($member->plan && $member->plan !== 'Per Visit') {
@@ -178,7 +178,7 @@ class DatabaseSeeder extends Seeder
                     'product_id'     => null,
                     'branch_id'      => $member->branch_id,
                     'class_name'     => $member->plan . ' Membership', // Label Langganan
-                    'trainer'        => 'RAW Auto-Bill',
+                    'trainer'        => 'MAJESTY Auto-Bill',
                     'date'           => $lastPayDate,
                     'time'           => '00:00',
                     'status'         => 'completed',
@@ -208,7 +208,7 @@ class DatabaseSeeder extends Seeder
                 'product_id'     => $prod->id,
                 'branch_id'      => 'STORE',
                 'class_name'     => $prod->name,
-                'trainer'        => 'RAW Store',
+                'trainer'        => 'MAJESTY Store',
                 'date'           => date('d M Y', strtotime('-' . rand(1, 5) . ' days')),
                 'time'           => '10:00',
                 'status'         => 'completed',
@@ -256,7 +256,7 @@ class DatabaseSeeder extends Seeder
             'type'           => 'private',
             'icon'           => '💪',
             'category'       => 'Private',
-            'description'    => 'Location: RAW Uluwatu',
+            'description'    => 'Location: MAJESTY Uluwatu',
             'is_attended'    => true // 👈 Earning masuk
         ]);
 
@@ -413,7 +413,7 @@ class DatabaseSeeder extends Seeder
             ['icon' => '📅', 'name' => 'Week Warrior', 'desc' => 'Maintain a 7-day streak', 'rule_type' => 'streak', 'target_value' => 7],
             ['icon' => '💪', 'name' => 'Iron Discipline', 'desc' => 'Maintain a 14-day streak', 'rule_type' => 'streak', 'target_value' => 14],
             ['icon' => '🌟', 'name' => 'Committed', 'desc' => 'Stay active for 3 months', 'rule_type' => 'months', 'target_value' => 3],
-            ['icon' => '🛒', 'name' => 'RAW Shopper', 'desc' => 'Make your first store purchase', 'rule_type' => 'purchase_count', 'target_value' => 1],
+            ['icon' => '🛒', 'name' => 'MAJESTY Shopper', 'desc' => 'Make your first store purchase', 'rule_type' => 'purchase_count', 'target_value' => 1],
             ['icon' => '🌏', 'name' => 'Branch Explorer', 'desc' => 'Try classes at 2 different branches', 'rule_type' => 'branch_count', 'target_value' => 2],
         ];
 

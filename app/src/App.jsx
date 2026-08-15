@@ -12,7 +12,7 @@ const API_HEADERS = {
 };
 
 /* ═══════════════════════════════════════════════════════════════
-   DESIGN TOKENS - RAW GYM BRANDING
+   DESIGN TOKENS - MAJESTY BALI BRANDING
 ═══════════════════════════════════════════════════════════════ */
 const T = {
   bg:"#05050A",surface:"#0A0A15",card:"#111122",cardHi:"#18182E",
@@ -46,21 +46,26 @@ const TRAINERS_INIT=[
    phone:"+62 858-7777-8888",dob:"2 Dec 1986",address:"Jl. Raya Sanggingan No. 15, Ubud, Bali",docs:["CSCS (NSCA 2016)","FMS Level 2 (2019)"]},
   {id:"T8",name:"Maya Lestari", avatar:"🌿",specialty:"Yoga & Wellness", rating:4.9,sessions:780, branchId:"B4",certs:["RYT-500","Yin"],     bio:"Holistic wellness practitioner.",ig:"@mayawellness",
    phone:"+62 813-8888-9999",dob:"30 Apr 1992",address:"Jl. Bisma No. 4, Ubud, Bali",docs:["RYT-500 (2021)","Yin Yoga Teacher (2022)","Nutrition Coach (2023)"]},
+  {id:"T9",name:"Master Lee", avatar:"🥋",specialty:"Taekwondo",       rating:4.9,sessions:520, branchId:"B2",certs:["Kukkiwon","WTF"], bio:"Taekwondo master, mantan atlet nasional.",ig:"@masterlee",
+   phone:"+62 812-7777-8888",dob:"12 Feb 1982",address:"Jl. Raya Kerobokan No. 8, Badung, Bali",docs:["Kukkiwon 4th Dan","WTF Referee (2020)"]},
+  {id:"T10",name:"Coach Made",avatar:"🤼",specialty:"Wrestling & MMA",   rating:4.8,sessions:410, branchId:"B1",certs:["FILA","Sambo"],   bio:"Wrestling coach & grappler.",ig:"@cocomade",
+   phone:"+62 813-5555-6666",dob:"5 Aug 1988",address:"Jl. Raya Seminyak No. 12, Badung, Bali",docs:["FILA Wrestling Coach (2019)","Combat Sambo (2021)"]},
 ];
 
 // Gym Settings initial data (editable by admin)
 const GYM_SETTINGS_INIT = [];
 
 const CLASSES_INIT=[
-  {id:"C1", branchId:"B1",name:"HIIT INFERNO",   trainerId:"T1",time:"06:00",day:"Mon",duration:"45 min",slots:3, total:15,icon:"🔥",intensity:"HIGH",category:"HIIT",    color:"#FF3131",status:"active"},
-  {id:"C2", branchId:"B1",name:"YOGA FLOW",       trainerId:"T2",time:"07:30",day:"Mon",duration:"60 min",slots:8, total:12,icon:"🧘",intensity:"LOW", category:"Yoga",    color:"#B39DDB",status:"active"},
-  {id:"C3", branchId:"B1",name:"STRENGTH BEAST",  trainerId:"T1",time:"09:00",day:"Tue",duration:"60 min",slots:2, total:10,icon:"🏋️",intensity:"HIGH",category:"Strength",color:"#FF5C00",status:"active"},
-  {id:"C4", branchId:"B2",name:"BOXING PRO",      trainerId:"T3",time:"07:00",day:"Mon",duration:"60 min",slots:5, total:10,icon:"🥊",intensity:"HIGH",category:"Boxing",  color:"#FF3131",status:"active"},
-  {id:"C5", branchId:"B2",name:"PILATES SCULPT",  trainerId:"T4",time:"09:30",day:"Mon",duration:"55 min",slots:7, total:10,icon:"🧘",intensity:"MED", category:"Pilates", color:"#B39DDB",status:"active"},
-  {id:"C6", branchId:"B3",name:"OUTDOOR RUN",     trainerId:"T5",time:"06:00",day:"Mon",duration:"60 min",slots:12,total:20,icon:"🏃",intensity:"MED", category:"Cardio",  color:"#00FF85",status:"active"},
-  {id:"C7", branchId:"B4",name:"POWER LIFT",      trainerId:"T7",time:"06:30",day:"Mon",duration:"70 min",slots:4, total:8, icon:"🏋️",intensity:"HIGH",category:"Strength",color:"#FFD700",status:"active"},
-  {id:"CO1", branchId:"ONLINE",name:"VIRTUAL HIIT", trainerId:"T1",time:"10:00",day:"Mon",duration:"45 min",slots:45, total:50,icon:"💻",intensity:"HIGH",category:"HIIT", color:T.blue,status:"active"},
-  {id:"CO2", branchId:"ONLINE",name:"HOME YOGA",    trainerId:"T2",time:"19:00",day:"Tue",duration:"60 min",slots:20, total:50,icon:"🧘",intensity:"LOW", category:"Yoga", color:T.purple,status:"active"},
+  {id:"C1", branchId:"B1",name:"HIIT INFERNO",        trainerId:"T1",time:"06:00",day:"Mon",duration:"45 min",slots:3, total:15,icon:"🔥",intensity:"HIGH",category:"HIIT",              color:"#FF3131",status:"active"},
+  {id:"C2", branchId:"B1",name:"FLEXIBILITY FLOW",    trainerId:"T2",time:"07:30",day:"Mon",duration:"60 min",slots:8, total:12,icon:"🧘",intensity:"LOW", category:"Flexibility",      color:"#B39DDB",status:"active"},
+  {id:"C3", branchId:"B4",name:"MIND & BODY HEALING", trainerId:"T8",time:"18:00",day:"Tue",duration:"60 min",slots:6, total:12,icon:"🌿",intensity:"LOW", category:"Mind & Body Healing",color:"#00FF85",status:"active"},
+  {id:"C4", branchId:"B2",name:"TAEKWONDO",           trainerId:"T9",time:"16:00",day:"Mon",duration:"60 min",slots:8, total:15,icon:"🥋",intensity:"MED", category:"Taekwondo",         color:"#4FC3F7",status:"active"},
+  {id:"C5", branchId:"B2",name:"KICKBOXING PRO",      trainerId:"T3",time:"07:00",day:"Mon",duration:"60 min",slots:5, total:10,icon:"🦵",intensity:"HIGH",category:"Kickboxing",         color:"#FF5C00",status:"active"},
+  {id:"C6", branchId:"B2",name:"BOXING PRO",          trainerId:"T3",time:"07:00",day:"Wed",duration:"60 min",slots:5, total:10,icon:"🥊",intensity:"HIGH",category:"Boxing",            color:"#FF3131",status:"active"},
+  {id:"C7", branchId:"B1",name:"MMA COMBAT",          trainerId:"T3",time:"19:00",day:"Thu",duration:"90 min",slots:6, total:12,icon:"⚔️",intensity:"HIGH",category:"MMA",               color:"#FFD700",status:"active"},
+  {id:"C8", branchId:"B1",name:"WRESTLING",           trainerId:"T10",time:"17:00",day:"Tue",duration:"60 min",slots:8, total:12,icon:"🤼",intensity:"MED", category:"Wrestling",         color:"#B39DDB",status:"active"},
+  {id:"CO1", branchId:"ONLINE",name:"VIRTUAL HIIT",     trainerId:"T1",time:"10:00",day:"Mon",duration:"45 min",slots:45, total:50,icon:"💻",intensity:"HIGH",category:"HIIT", color:T.blue,status:"active"},
+  {id:"CO2", branchId:"ONLINE",name:"HOME FLEXIBILITY", trainerId:"T2",time:"19:00",day:"Tue",duration:"60 min",slots:20, total:50,icon:"🧘",intensity:"LOW", category:"Flexibility", color:T.purple,status:"active"},
 ];
 
 const USERS_INIT=[
@@ -69,7 +74,7 @@ const USERS_INIT=[
   {id:"U2",role:"member", email:"rina@gym.com",  pass:"123",name:"Rina Dewi",    avatar:"🧘",plan:"Annual",   branchId:"B2",streak:14,joinDate:"Nov 2024",spend:3200000,totalClasses:47,
    phone:"+62 821-5678-9012", dob:"22 Aug 1992", address:"Jl. Batu Bolong No. 5, Canggu, Bali",    emergencyContact:"Dewi (+62 856-1234-5678)"},
   {id:"U3",role:"admin",  email:"admin@gym.com", pass:"123",name:"Super Admin",  avatar:"🛡️",plan:null,      branchId:null,streak:0,
-   phone:"+62 811-0000-0001", dob:"01 Jan 1985", address:"HQ RAW Gym, Bali", emergencyContact:""},
+   phone:"+62 811-0000-0001", dob:"01 Jan 1985", address:"HQ MAJESTY BALI, Bali", emergencyContact:""},
   {id:"U4",role:"trainer",email:"coach@gym.com", pass:"123",name:"Coach Hendra", avatar:"🏋️",branchId:"B1",trainerId:"T1",
    phone:"+62 878-1111-2222", dob:"10 Jun 1988", address:"Jl. Labuansait No. 5, Uluwatu, Bali", emergencyContact:""},
 ];
@@ -84,19 +89,19 @@ const TRANSFERS_INIT=[
 
 const PRODUCTS_INIT = [
   // Merchandise
-  { id: "P1", name: "Oversized RAW Tee", price: 250000, cost: 120000, stock: 15, icon: "👕", category: "Merchandise", description: "Premium cotton oversized tee with RAW branding. Available S-XXL.", img: "👕" },
-  { id: "P2", name: "RAW Gym Bag", price: 450000, cost: 220000, stock: 8, icon: "🎒", category: "Merchandise", description: "Durable gym bag with separate wet pocket and shoe compartment.", img: "🎒" },
-  { id: "P3", name: "RAW Cap", price: 150000, cost: 60000, stock: 20, icon: "🧢", category: "Merchandise", description: "Structured snapback cap. One size fits all.", img: "🧢" },
+  { id: "P1", name: "Oversized MAJESTY Tee", price: 250000, cost: 120000, stock: 15, icon: "👕", category: "Merchandise", description: "Premium cotton oversized tee with MAJESTY branding. Available S-XXL.", img: "👕" },
+  { id: "P2", name: "MAJESTY Gym Bag", price: 450000, cost: 220000, stock: 8, icon: "🎒", category: "Merchandise", description: "Durable gym bag with separate wet pocket and shoe compartment.", img: "🎒" },
+  { id: "P3", name: "MAJESTY Cap", price: 150000, cost: 60000, stock: 20, icon: "🧢", category: "Merchandise", description: "Structured snapback cap. One size fits all.", img: "🧢" },
   // Supplements
-  { id: "P4", name: "RAW Whey Isolate", price: 850000, cost: 600000, stock: 24, icon: "🥤", category: "Supplements", description: "25g protein per serving. Chocolate & Vanilla flavour. 1kg pack.", img: "🥤" },
+  { id: "P4", name: "MAJESTY Whey Isolate", price: 850000, cost: 600000, stock: 24, icon: "🥤", category: "Supplements", description: "25g protein per serving. Chocolate & Vanilla flavour. 1kg pack.", img: "🥤" },
   { id: "P5", name: "Pre-Workout Monster", price: 450000, cost: 310000, stock: 8, icon: "⚡", category: "Supplements", description: "High-stim pre-workout. 30 servings. Sour Watermelon flavour.", img: "⚡" },
   { id: "P6", name: "BCAA Recovery", price: 320000, cost: 200000, stock: 12, icon: "💊", category: "Supplements", description: "Essential amino acids for faster recovery. 60 servings.", img: "💊" },
   // Equipment
-  { id: "P7", name: "RAW Lifting Belt", price: 650000, cost: 400000, stock: 0, icon: "🏋️", category: "Equipment", description: "Genuine leather powerlifting belt. 10mm thickness. S/M/L/XL.", img: "🏋️" },
+  { id: "P7", name: "MAJESTY Lifting Belt", price: 650000, cost: 400000, stock: 0, icon: "🏋️", category: "Equipment", description: "Genuine leather powerlifting belt. 10mm thickness. S/M/L/XL.", img: "🏋️" },
   { id: "P8", name: "Resistance Bands Set", price: 280000, cost: 130000, stock: 14, icon: "🔴", category: "Equipment", description: "5-band set from light to extra heavy. Latex-free.", img: "🔴" },
   { id: "P9", name: "Jump Rope Pro", price: 180000, cost: 80000, stock: 22, icon: "🪢", category: "Equipment", description: "Speed rope with ball-bearing handles for double-unders.", img: "🪢" },
   // Events
-  { id: "P10", name: "RAW Throwdown 2025", price: 350000, cost: 50000, stock: 50, icon: "🏆", category: "Events", description: "Annual fitness competition. All levels welcome. May 24–25, 2025. Includes T-shirt & medal.", img: "🏆" },
+  { id: "P10", name: "MAJESTY Throwdown 2026", price: 350000, cost: 50000, stock: 50, icon: "🏆", category: "Events", description: "Annual fitness competition. All levels welcome. May 24–25, 2025. Includes T-shirt & medal.", img: "🏆" },
   { id: "P11", name: "Nutrition Workshop", price: 200000, cost: 30000, stock: 20, icon: "🥗", category: "Events", description: "3-hour workshop on sports nutrition with certified dietitian. Apr 12, 2025.", img: "🥗" },
   // F&B
   { id: "P12", name: "Protein Smoothie", price: 55000, cost: 20000, stock: 99, icon: "🥛", category: "F&B", description: "Fresh blended protein smoothie. 5 flavours. Pick up at café.", img: "🥛" },
@@ -335,7 +340,7 @@ export default function App(){
   const [clientNotes, setClientNotes] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [trainerLogs,setTrainerLogs]=useState(LOGS_INIT);
-  const [broadcasts,setBroadcasts]=useState([{id:1, text:"Welcome to RAW Gym! Stay hydrated and crush your goals.", date:"Today"}]);
+  const [broadcasts,setBroadcasts]=useState([{id:1, text:"Welcome to MAJESTY BALI! Stay hydrated and crush your goals.", date:"Today"}]);
   const [fitnessProgress,setFitnessProgress]=useState({"U1": [{id:1, date:"10 Mar", weight:75, note:"Start recording"}]});
   const [securityLog,setSecurityLog]=useState([
     {id:1, event:"Login successful", device:"iPhone 15 Pro · Safari", ip:"103.12.45.67", time: new Date(Date.now()-3600000)},
@@ -815,7 +820,7 @@ export default function App(){
       id: transactionId, type: "product", date: payload.date, time: payload.time,
       productId: product.id, productName: product.name, icon: product.icon, category: product.category,
       revenue: product.price, cogs: product.cost, profit: product.price - product.cost,
-      userId, className: product.name, trainer: "RAW Store", status: "pending",
+      userId, className: product.name, trainer: "MAJESTY Store", status: "pending",
       paymentStatus, amount: product.price, method, branchId: "STORE",
     };
 
@@ -1113,7 +1118,7 @@ function ExploreDiscover({branches,classes,trainers,users,onLogin,onRegister,get
         <div style={{padding:"60px 24px 28px",position:"relative",zIndex:1}}>
           <div className="fu" style={{display:"inline-flex",alignItems:"center",gap:8,background:T.card,borderRadius:20,padding:"8px 16px",border:`1px solid ${T.border}`,marginBottom:16}}>
             <span style={{fontSize:18}}>⚡</span>
-            <span style={{fontFamily:F.mono,fontSize:10,color:T.lime,letterSpacing:3,fontWeight:700}}>RAW GYM NETWORK</span>
+            <span style={{fontFamily:F.mono,fontSize:10,color:T.lime,letterSpacing:3,fontWeight:700}}>MAJESTY BALI NETWORK</span>
           </div>
           <div className="fu" style={{animationDelay:".06s",fontFamily:F.display,fontSize:60,color:T.text,letterSpacing:3,lineHeight:.9,marginBottom:12}}>
             NO EXCUSES.<br/><span style={{color:T.lime}}>ONLY</span><br/>RESULTS.
@@ -1730,7 +1735,7 @@ function MemberApp({user,updateUser,branches,classes,bookings,setBookings,transf
       if (transaction === false) return; 
       setSuccess({
         className: selProduct.name, 
-        trainer: "RAW Store", 
+        trainer: "MAJESTY Store", 
         date: transaction.date, 
         time: transaction.time, 
         id: transaction.id, 
@@ -3923,7 +3928,7 @@ function BranchFormModal({branch, onSave, onClose, accent}) {
           </div>
           <div style={{flex:3}}>
             <div style={{fontSize:11, color:T.muted, fontFamily:F.mono, marginBottom:6}}>FULL NAME</div>
-            <input value={f.name} onChange={e=>s("name",e.target.value)} placeholder="RAW Seminyak" style={{width:"100%", background:T.card, border:`1px solid ${T.border}`, borderRadius:12, padding:"11px 14px", color:T.text, fontSize:13}} />
+            <input value={f.name} onChange={e=>s("name",e.target.value)} placeholder="MAJESTY Seminyak" style={{width:"100%", background:T.card, border:`1px solid ${T.border}`, borderRadius:12, padding:"11px 14px", color:T.text, fontSize:13}} />
           </div>
           <div style={{flex:2}}>
             <div style={{fontSize:11, color:T.muted, fontFamily:F.mono, marginBottom:6}}>SHORT</div>
@@ -4000,7 +4005,7 @@ function ProductModal({ product, onClose, onSave, accent }) {
           </div>
           <div style={{flex:4}}>
             <div style={{fontSize:11,color:T.muted,fontFamily:F.mono,letterSpacing:1,marginBottom:6}}>ITEM NAME</div>
-            <input value={f.name} onChange={e=>s("name",e.target.value)} placeholder="e.g. RAW Lifting Belt" style={{width:"100%",background:T.card,border:`1px solid ${T.border}`,borderRadius:12,padding:"11px 14px",color:T.text,fontSize:13}}/>
+            <input value={f.name} onChange={e=>s("name",e.target.value)} placeholder="e.g. MAJESTY Lifting Belt" style={{width:"100%",background:T.card,border:`1px solid ${T.border}`,borderRadius:12,padding:"11px 14px",color:T.text,fontSize:13}}/>
           </div>
         </div>
 
@@ -5642,7 +5647,7 @@ function PurchaseHistoryModal({bookings,selItem,setSelItem,classes,products,bran
           <div style={{textAlign:"center",marginBottom:20}}>
             <div style={{fontSize:56,marginBottom:8}}>{selItem.icon||"🎟️"}</div>
             <div style={{fontFamily:F.display,fontSize:24,color:T.text,letterSpacing:2,lineHeight:1}}>{selItem.className}</div>
-            <div style={{fontSize:13,color:T.muted,marginTop:4}}>{isShop?"RAW Store Purchase":"Class Booking"}</div>
+            <div style={{fontSize:13,color:T.muted,marginTop:4}}>{isShop?"MAJESTY Store Purchase":"Class Booking"}</div>
           </div>
           <div style={{background:T.card,borderRadius:16,padding:16,marginBottom:16,border:`1px solid ${T.border}`}}>
             {[
@@ -5806,7 +5811,7 @@ function HelpSupportModal({tickets,onSubmit,onClose,accent,sendReply}){
               <div style={{fontSize:12,color:T.muted,marginBottom:8,lineHeight:1.5}}>{t.message}</div>
               {t.replies.length>0&&t.replies.map((r,j)=>(
                 <div key={j} style={{background:r.from==="admin"?T.green+"18":T.cardHi,borderRadius:10,padding:"8px 12px",marginTop:6,borderLeft:`2px solid ${r.from==="admin"?T.green:accent}`,fontSize:12,color:T.text,lineHeight:1.5}}>
-                  <div style={{fontSize:10,color:r.from==="admin"?T.green:accent,fontWeight:700,marginBottom:3,fontFamily:F.mono}}>{r.from==="admin"?"RAW SUPPORT":"YOU"}</div>
+                  <div style={{fontSize:10,color:r.from==="admin"?T.green:accent,fontWeight:700,marginBottom:3,fontFamily:F.mono}}>{r.from==="admin"?"MAJESTY SUPPORT":"YOU"}</div>
                   {r.text}
                 </div>
               ))}
@@ -5891,7 +5896,7 @@ function AdminSupportInbox({tickets,users,onReply,onClose,onCloseTicket,accent})
         {/* Replies */}
         {selTicket.replies.map((r,i)=>(
           <div key={i} style={{background:r.from==="admin"?T.green+"18":T.cardHi,borderRadius:12,padding:12,marginBottom:8,borderLeft:`3px solid ${r.from==="admin"?T.green:T.cyan}`,fontSize:13,color:T.text,lineHeight:1.6}}>
-            <div style={{fontSize:10,color:r.from==="admin"?T.green:T.cyan,fontWeight:700,marginBottom:4,fontFamily:F.mono}}>{r.from==="admin"?"RAW SUPPORT":"MEMBER"} · {new Date(r.time).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"})}</div>
+            <div style={{fontSize:10,color:r.from==="admin"?T.green:T.cyan,fontWeight:700,marginBottom:4,fontFamily:F.mono}}>{r.from==="admin"?"MAJESTY SUPPORT":"MEMBER"} · {new Date(r.time).toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"})}</div>
             {r.text}
           </div>
         ))}
@@ -6112,7 +6117,7 @@ function AndroidInstallBanner() {
     <div className="su" style={{position:"fixed", top: 16, left:"50%", transform:"translateX(-50%)", width:"calc(100% - 32px)", maxWidth:398, background:T.cardHi, border:`1px solid ${T.lime}66`, borderRadius:16, padding:"12px 14px", zIndex:9999, display:"flex", alignItems:"center", gap:12, boxShadow:`0 8px 32px rgba(0,0,0,0.6)`}}>
       <div style={{width:40, height:40, borderRadius:10, background:T.lime+"22", display:"flex", alignItems:"center", justifyContent:"center", fontSize:24, flexShrink:0}}>⚡</div>
       <div style={{flex:1, minWidth:0}}>
-        <div style={{fontWeight:700, color:T.text, fontSize:13}}>RAW Gym App</div>
+        <div style={{fontWeight:700, color:T.text, fontSize:13}}>Majesty Bali App</div>
         <div style={{fontSize:11, color:T.muted, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis"}}>Faster & better experience</div>
       </div>
       

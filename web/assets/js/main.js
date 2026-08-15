@@ -1,19 +1,67 @@
 /* ═══════════════════════════════════════════════════════════
-   mma majesty BALI — main.js
+   MAJESTY BALI — main.js
+   Semua nilai konfigurasi diambil dari config.js (anti-hardcode).
    ═══════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  /* ── Konfigurasi ─────────────────────────────────────── */
-  // GANTI nomor WhatsApp admin resmi di sini (format internasional, tanpa +)
-  const ADMIN_WA = '6281234567890';
-  const WA_DISPLAY = '0812-3456-7890';
+  const CFG = window.MAJESTY_CONFIG || {
+    brand: 'MAJESTY BALI', brandSmall: 'BALI', wa: '6281234567890',
+    waDisplay: '0812-3456-7890', email: 'admin@learnmmabalimajesty.com',
+    address: 'Denpasar, Bali, Indonesia', addressNote: '',
+    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Denpasar+Bali+Indonesia',
+    classes: []
+  };
+
+  /* ── Terapkan konfigurasi ke elemen [data-cfg] ────────── */
+  const cfgMap = {
+    brand: CFG.brand,
+    brandSmall: CFG.brandSmall,
+    heroSubtitle: CFG.heroSubtitle,
+    heroTitle1: CFG.heroTitle1,
+    heroTitle2: CFG.heroTitle2,
+    waDisplay: CFG.waDisplay,
+    email: CFG.email,
+    address: CFG.address,
+    addressNote: CFG.addressNote,
+    wa: 'https://wa.me/' + CFG.wa,
+    emailHref: 'mailto:' + CFG.email,
+    maps: CFG.mapsUrl
+  };
+  document.querySelectorAll('[data-cfg]').forEach((el) => {
+    const key = el.dataset.cfg;
+    if (key === 'wa' || key === 'emailHref' || key === 'maps') {
+      el.setAttribute('href', cfgMap[key]);
+    } else if (cfgMap[key] !== undefined) {
+      el.textContent = cfgMap[key];
+    }
+  });
+
+  /* ── Render 8 kelas dari config.js ────────────────────── */
+  const grid = document.getElementById('programGrid');
+  if (grid && Array.isArray(CFG.classes) && CFG.classes.length) {
+    grid.innerHTML = CFG.classes.map((c, i) => `
+      <article class="program-card">
+        <div class="program-icon">${c.icon || '🥊'}</div>
+        <h3>${c.name}</h3>
+        <p>${c.desc || ''}</p>
+        <span class="program-tag">${c.tag || 'Semua Level'}</span>
+      </article>`).join('');
+  } else {
+    grid.innerHTML = '<p class="muted">Daftar kelas belum diisi di config.js.</p>';
+  }
+
+  /* ── Isi pilihan kelas pada form pendaftaran ──────────── */
+  const kelasSelect = document.getElementById('program_pilihan');
+  if (kelasSelect && Array.isArray(CFG.classes)) {
+    kelasSelect.innerHTML = CFG.classes.map((c) => `<option value="${c.name}">${c.name}</option>`).join('');
+  }
 
   /* ── Tahun footer ─────────────────────────────────────── */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ── Sticky header shadow ─────────────────────────────── */
+  /* ── Sticky header & back-to-top ──────────────────────── */
   const header = document.getElementById('siteHeader');
   const backTop = document.getElementById('backTop');
   const onScroll = () => {
@@ -89,7 +137,7 @@
     });
   };
 
-  const buildWaUrl = (text) => 'https://wa.me/' + ADMIN_WA + '?text=' + encodeURIComponent(text);
+  const buildWaUrl = (text) => 'https://wa.me/' + CFG.wa + '?text=' + encodeURIComponent(text);
 
   /* ── Form pendaftaran atlet ───────────────────────────── */
   const daftarForm = document.getElementById('daftarForm');
@@ -107,13 +155,12 @@
         if (!valid) { showError(el); ok = false; }
         else clearError(el);
       });
-      // honeypot
-      if (daftarForm.querySelector('input[name="website"]').value !== '') return;
+      if (daftarForm.querySelector('input[name="website"]').value !== '') return; // honeypot
       if (!ok) return;
 
       const f = new FormData(daftarForm);
       const msg =
-        '🏆 *PENDAFTARAN ATLET — mma majesty BALI*\n\n' +
+        '🏆 *PENDAFTARAN ATLET — ' + CFG.brand + '*\n\n' +
         'Nama: ' + f.get('atlet_name') + '\n' +
         'Sasana/Tim: ' + f.get('asal_tim') + '\n' +
         'WA Ofisial: ' + f.get('no_wa') + '\n' +
@@ -121,7 +168,7 @@
         'Jenis Kelamin: ' + f.get('jenis_kelamin') + '\n' +
         'Berat: ' + f.get('berat_badan') + ' kg\n' +
         'Kategori: ' + f.get('kategori_tanding') + '\n' +
-        'Program: ' + f.get('program_pilihan');
+        'Kelas: ' + f.get('program_pilihan');
       waSendLink.href = buildWaUrl(msg);
       daftarForm.hidden = true;
       daftarSuccess.hidden = false;
@@ -150,7 +197,7 @@
       if (!ok) return;
       const f = new FormData(kontakForm);
       const msg =
-        '💬 *PESAN — mma majesty BALI*\n\n' +
+        '💬 *PESAN — ' + CFG.brand + '*\n\n' +
         'Nama: ' + f.get('nama') + '\n' +
         'WA: ' + f.get('wa') + '\n' +
         'Topik: ' + f.get('topik') + '\n' +
@@ -199,7 +246,6 @@
   if (installBtn) {
     installBtn.addEventListener('click', async () => {
       if (!deferredPrompt) {
-        // Fallback: instruksi manual
         alert('Install aplikasi: buka menu browser lalu pilih "Add to Home Screen" / "Install app".');
         return;
       }
@@ -217,9 +263,4 @@
       navigator.serviceWorker.register('sw.js').catch((err) => console.warn('SW register gagal:', err));
     });
   }
-
-  /* ── Tampilkan nomor WA di catatan form ───────────────── */
-  document.querySelectorAll('.form-note').forEach((n) => {
-    n.textContent = n.textContent.replace(/resmi mma majesty\.?$/, 'resmi mma majesty (' + WA_DISPLAY + ').');
-  });
 })();

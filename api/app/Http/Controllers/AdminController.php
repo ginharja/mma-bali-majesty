@@ -89,7 +89,7 @@ class AdminController extends Controller
             'category' => $cat['cat'],
             'color' => $cat['color'],
             'status' => 'active',
-            'video_url' => $br === 'ONLINE' ? 'https://zoom.us/j/rawgym' : null
+            'video_url' => $br === 'ONLINE' ? 'https://zoom.us/j/majestybali' : null
         ]
     );
 }

@@ -9,8 +9,8 @@ export const initDB = async () => {
   if (!Capacitor.isNative) return null;
 
   try {
-    // Buat/buka database bernama 'rawgym_db'
-    db = await sqlite.createConnection('rawgym_db', false, 'no-encryption', 1, false);
+    // Buat/buka database bernama 'majesty_db'
+    db = await sqlite.createConnection('majesty_db', false, 'no-encryption', 1, false);
     await db.open();
 
     // Buat tabel untuk menyimpan cache data dari Laravel

@@ -47,7 +47,7 @@ class AuthController extends Controller
         ]);
 
         // 4. Kirim Email Notifikasi
-        $htmlBody = "<h3>Welcome to RAW Gym, {$request->name}!</h3>
+        $htmlBody = "<h3>Welcome to MAJESTY BALI, {$request->name}!</h3>
                      <p>Pendaftaran akun Anda berhasil. Berikut adalah detail login Anda:</p>
                      <p><strong>Email:</strong> {$request->email}<br>
                      <strong>Password:</strong> {$request->password}</p>
@@ -55,7 +55,7 @@ class AuthController extends Controller
 
         try {
             Mail::html($htmlBody, function ($msg) use ($request) {
-                $msg->to($request->email)->subject('Pendaftaran RAW Gym Berhasil');
+                $msg->to($request->email)->subject('Pendaftaran MAJESTY BALI Berhasil');
             });
         } catch (\Exception $e) {
             // Abaikan error email jika SMTP bermasalah, tetap return success agar user terdaftar
@@ -82,14 +82,14 @@ class AuthController extends Controller
         // Buat link reset (Arahkan kembali ke React dengan parameter)
         $resetLink = "http://localhost:5173/?reset_token={$token}&email={$request->email}";
 
-        $htmlBody = "<h3>Reset Password RAW Gym</h3>
+        $htmlBody = "<h3>Reset Password MAJESTY BALI</h3>
                      <p>Halo {$user->name}, kami menerima permintaan reset password untuk akun Anda.</p>
                      <p>Klik link di bawah ini untuk membuat password baru:</p>
                      <a href='{$resetLink}' style='background:#CCFF00; color:#000; padding:10px 20px; text-decoration:none; font-weight:bold; border-radius:10px;'>RESET PASSWORD</a>";
 
         try {
             Mail::html($htmlBody, function ($msg) use ($request) {
-                $msg->to($request->email)->subject('Reset Password RAW Gym');
+                $msg->to($request->email)->subject('Reset Password MAJESTY BALI');
             });
             return response()->json(['status' => 'success', 'message' => 'Link reset telah dikirim ke email Anda.']);
         } catch (\Exception $e) {
