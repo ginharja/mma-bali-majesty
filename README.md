@@ -141,14 +141,14 @@ Situs `web/` adalah **statis murni** — paling ringan dan paling aman untuk hos
 
 | Aplikasi | URL | Lokasi server |
 |---|---|---|
-| WordPress | https://learnmmabalimajesty.com/ | `public_html/` (root) |
-| Frontend (PWA) | https://learnmmabalimajesty.com/app/ | `public_html/app/` |
+| Frontend (PWA, utama) | https://learnmmabalimajesty.com/ | `public_html/` (root) |
+| Frontend (mirror) | https://learnmmabalimajesty.com/app/ | `public_html/app/` |
 | Laravel API | https://learnmmabalimajesty.com/api/ | `public_html/api/` (rewrite ke `public/`) |
 
-- Folder `/app/` & `/api/` adalah direktori fisik → rewrite WordPress otomatis melewatinya (tidak bentrok).
+- **WordPress telah dihapus dari server** (file di-rename `.wp-bak`, situs PWA statis di root).
 - Kunci API memakai header `x-api-key` (nilai di `.env` Laravel = `VITE_API_KEY` di app).
 - `.env`, `artisan`, `composer.*` di `/api/` diblokir akses langsung oleh `.htaccess` (403).
-- Status deploy: ✅ FE live di `/app/` · ✅ API live di `/api/` (menunggu isi DB di cPanel) · ✅ Tema WP live.
+- Status deploy: ✅ FE live di root (tanpa cache LiteSpeed, `must-revalidate`) · ✅ API live di `/api/` (menunggu isi DB di cPanel).
 
 ## 🔐 Keamanan (wajib dibaca)
 
