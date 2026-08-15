@@ -1,0 +1,11 @@
+{
+  "appId": "com.mmamajesty.app",
+  "appName": "Majesty MMA",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  }
+}

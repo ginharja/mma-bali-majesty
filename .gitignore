@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+
+# Environment & secrets — JANGAN commit
+.env
+.env.production
+.env.local
+.env.*.local
+
+# PHP / Laravel
+vendor/
+
+# Editor
+.vscode/
+.idea/
