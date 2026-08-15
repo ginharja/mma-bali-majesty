@@ -69,9 +69,9 @@ const CLASSES_INIT=[
 ];
 
 const USERS_INIT=[
-  {id:"U1",role:"member", email:"alex@gym.com",  pass:"123",name:"Alex Fitria",  avatar:"💪",plan:"Monthly",  branchId:"B1",streak:7, joinDate:"Jan 2025",spend:450000, totalClasses:14,
+  {id:"U1",role:"member", email:"alex@gym.com",  pass:"123",name:"Alex Fitria",  avatar:"💪",plan:"Bulanan",  branchId:"B1",streak:7, joinDate:"Jan 2025",spend:450000, totalClasses:14,
    phone:"+62 812-3456-7890", dob:"15 Mar 1995", address:"Jl. Sunset Road No. 12, Seminyak, Bali", emergencyContact:"Fitria (+62 813-9999-0000)"},
-  {id:"U2",role:"member", email:"rina@gym.com",  pass:"123",name:"Rina Dewi",    avatar:"🧘",plan:"Annual",   branchId:"B2",streak:14,joinDate:"Nov 2024",spend:3200000,totalClasses:47,
+  {id:"U2",role:"member", email:"rina@gym.com",  pass:"123",name:"Rina Dewi",    avatar:"🧘",plan:"Bulanan",   branchId:"B2",streak:14,joinDate:"Nov 2024",spend:3200000,totalClasses:47,
    phone:"+62 821-5678-9012", dob:"22 Aug 1992", address:"Jl. Batu Bolong No. 5, Canggu, Bali",    emergencyContact:"Dewi (+62 856-1234-5678)"},
   {id:"U3",role:"admin",  email:"admin@gym.com", pass:"123",name:"Super Admin",  avatar:"🛡️",plan:null,      branchId:null,streak:0,
    phone:"+62 811-0000-0001", dob:"01 Jan 1985", address:"HQ MAJESTY BALI, Bali", emergencyContact:""},
@@ -159,7 +159,7 @@ function getPlanDays(plan){
 
 // Menghitung tanggal tagihan berikutnya (Recurrent Billing) presisi dengan Tanggal
 function getNextBillingDate(user) {
-  if(!user?.joinDate || !user?.plan || user.plan === "Per Visit") return null;
+  if(!user?.joinDate || !user?.plan || user.plan === "Per Kedatangan") return null;
   const planMap = {"Jan":0,"Feb":1,"Mar":2,"Apr":3,"May":4,"Jun":5,"Jul":6,"Aug":7,"Sep":8,"Oct":9,"Nov":10,"Dec":11};
   const parts = user.joinDate.trim().split(" ");
   
@@ -198,7 +198,7 @@ function getLastPaymentDate(user) {
 
 // Calculate days remaining until next billing
 function getDaysLeft(user){
-  if(!user?.plan || user.plan === "Per Visit") return "–";
+  if(!user?.plan || user.plan === "Per Kedatangan") return "–";
   const nextBilling = getNextBillingDate(user);
   if(!nextBilling) return "–";
   const now = new Date();
@@ -330,10 +330,8 @@ export default function App(){
   const [products,setProducts]=useState(PRODUCTS_INIT);
   const [sales,setSales]=useState([]);
   const [plans, setPlans] = useState([
-  { id: 'visit', name: 'Per Visit', price: 75000, period: '/visit', badge: '', icon: '🎯', color: '#00E5FF' },
-  { id: 'monthly', name: 'Monthly', price: 350000, period: '/month', badge: 'POPULAR', icon: '📅', color: '#CCFF00' },
-  { id: 'quarterly', name: 'Quarterly', price: 900000, period: '/3 months', badge: 'SAVE 14%', icon: '📊', color: '#B39DDB' },
-  { id: 'annually', name: 'Annual', price: 3000000, period: '/year', badge: 'SAVE 29%', icon: '👑', color: '#FFD700' }
+  { id: 'visit', name: 'Per Kedatangan', price: 75000, period: '/kali', badge: '', icon: '🎯', color: '#00E5FF' },
+  { id: 'monthly', name: 'Bulanan', price: 350000, period: '/bulan', badge: 'TANPA IKATAN', icon: '📅', color: '#CCFF00' }
 ]);
   const [gymSettings, setGymSettings] = useState({});
   const [notifications, setNotifications] = useState([]);
@@ -596,7 +594,7 @@ export default function App(){
       try { parsedDocs = typeof u.docs === 'string' ? JSON.parse(u.docs) : (u.docs || []); } catch(e){}
       return {
         id: "U" + u.id, role: u.role, email: u.email, pass: "123", name: u.name,
-        avatar: u.avatar || "👤", plan: u.plan || "Per Visit", branchId: u.branch_id,
+        avatar: u.avatar || "👤", plan: u.plan || "Per Kedatangan", branchId: u.branch_id,
         trainerId: u.trainer_id, streak: u.streak || 0, joinDate: u.join_date || "Jan 2025",
         spend: u.spend || 0, totalClasses: u.total_classes || 0, phone: u.phone || "",
         dob: u.dob || "", address: u.address || "", emergencyContact: u.emergency_contact || "",
@@ -4983,7 +4981,7 @@ function FullReportsModal({branches,members,classes,bookings,sales,trainers,onCl
               {l:"Monthly Plan",     v:filtM.filter(m=>m.plan==="Monthly").length},
               {l:"Annual Plan",      v:filtM.filter(m=>m.plan==="Annual").length},
               {l:"Quarterly Plan",   v:filtM.filter(m=>m.plan==="Quarterly").length},
-              {l:"Per Visit",        v:filtM.filter(m=>m.plan==="Per Visit").length},
+              {l:"Per Kedatangan",        v:filtM.filter(m=>m.plan==="Per Kedatangan").length},
               {l:"Avg Classes/Member",v:filtM.length>0?Math.round(filtM.reduce((s,m)=>s+(m.totalClasses||0),0)/filtM.length):0},
             ].map((s,i)=>(
               <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px 0",borderBottom:`1px solid ${T.border}`}}>

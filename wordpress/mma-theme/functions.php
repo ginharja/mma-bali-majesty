@@ -381,7 +381,7 @@ function mma_terima_pendaftaran() {
                 // ----------------------------------------------------
                 // FORMAT PESAN OTOMATIS KE WHATSAPP ADMIN
                 // ----------------------------------------------------
-                $admin_wa = '6283898227772';
+                $admin_wa = '6287838872777';
                 $pesan_wa = "Halo Admin MAJESTY BALI, saya ingin mengonfirmasi pendaftaran atlet dengan detail berikut:\n\n";
                 $pesan_wa .= "👤 *Nama Atlet:* " . $atlet_name . "\n";
                 $pesan_wa .= "🥊 *Asal Sasana/Tim:* " . $asal_tim . "\n";
@@ -3670,7 +3670,7 @@ function mma_terima_order_tiket() {
             // ----------------------------------------------------
             // FORMAT PESAN OTOMATIS KE WHATSAPP ADMIN
             // ----------------------------------------------------
-            $admin_wa = '6283898227772'; // Nomor WA Admin
+            $admin_wa = '6287838872777'; // Nomor WA Admin
             $pesan_wa = "Halo Admin MAJESTY BALI, saya ingin mengonfirmasi pemesanan tiket dengan detail berikut:\n\n";
             $pesan_wa .= "👤 *Nama:* " . $nama . "\n";
             $pesan_wa .= "🎟️ *Event:* " . $kat . "\n";

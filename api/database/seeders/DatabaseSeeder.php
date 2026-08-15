@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\GymClass;
+use App\Models\Plan;
 use App\Models\Booking;
 use App\Models\SupportTicket;
 use App\Models\Transfer;
@@ -44,14 +45,16 @@ class DatabaseSeeder extends Seeder
             ['id' => 7, 'name'=>'Dewi Rahayu', 'email'=>'dewi@gym.com', 'password'=>Hash::make('123'), 'role'=>'trainer', 'avatar'=>'💃', 'plan'=>null, 'branch_id'=>'B3', 'streak'=>0, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 831-6666-7777', 'address'=>'Berawa', 'trainer_id'=>'T6', 'status'=>'active'],
             ['id' => 8, 'name'=>'Andi Setiawan', 'email'=>'andi@gym.com', 'password'=>Hash::make('123'), 'role'=>'trainer', 'avatar'=>'💪', 'plan'=>null, 'branch_id'=>'B4', 'streak'=>0, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 858-7777-8888', 'address'=>'Ubud', 'trainer_id'=>'T7', 'status'=>'active'],
             ['id' => 9, 'name'=>'Maya Lestari', 'email'=>'maya@gym.com', 'password'=>Hash::make('123'), 'role'=>'trainer', 'avatar'=>'🌿', 'plan'=>null, 'branch_id'=>'B4', 'streak'=>0, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 813-8888-9999', 'address'=>'Ubud', 'trainer_id'=>'T8', 'status'=>'active'],
-            ['id' => 10, 'name'=>'Alex Fitria', 'email'=>'alex@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'🧑‍🎤', 'plan'=>'Monthly', 'branch_id'=>'B1', 'streak'=>17, 'join_date'=>'25 Mar 2024', 'spend'=>1250000, 'total_classes'=>14, 'phone'=>'+62 812-3456-7890', 'dob'=>'15 Mar 1995', 'address'=>'Seminyak', 'status'=>'active'],
-            ['id' => 11, 'name'=>'Rina Dewi', 'email'=>'rina@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'👩‍🎤', 'plan'=>'Annual', 'branch_id'=>'B2', 'streak'=>14, 'join_date'=>'22 Aug 2024', 'spend'=>3200000, 'total_classes'=>47, 'phone'=>'+62 821-5678-9012', 'dob'=>'22 Aug 1992', 'address'=>'Canggu', 'status'=>'active'],
-            ['id' => 12, 'name'=>'Budi Santoso', 'email'=>'budi@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'🧑', 'plan'=>'Monthly', 'branch_id'=>'B1', 'streak'=>2, 'join_date'=>'20 Mar 2025', 'spend'=>350000, 'total_classes'=>4, 'status'=>'active'],
-            ['id' => 13, 'name'=>'Citra Kirana', 'email'=>'citra@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'👩', 'plan'=>'Per Visit', 'branch_id'=>'B2', 'streak'=>0, 'join_date'=>'10 Jan 2025', 'spend'=>150000, 'total_classes'=>2, 'status'=>'inactive'],
-            ['id' => 14, 'name'=>'Dodi Pratama', 'email'=>'dodi@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'👨', 'plan'=>'Quarterly', 'branch_id'=>'B3', 'streak'=>5, 'join_date'=>'22 Dec 2023', 'spend'=>900000, 'total_classes'=>20, 'status'=>'active'],
-            ['id' => 15, 'name'=>'Eka Putri', 'email'=>'eka@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'👱‍♀️', 'plan'=>'Annual', 'branch_id'=>'B4', 'streak'=>12, 'spend'=>3000000, 'total_classes'=>50, 'status'=>'active'],
-            ['id' => 16, 'name'=>'Fajar Nugraha', 'email'=>'fajar@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'🧔', 'plan'=>'Monthly', 'branch_id'=>'B1', 'streak'=>0, 'spend'=>350000, 'total_classes'=>1, 'status'=>'inactive'],
-            ['id' => 17, 'name'=>'Gita Savitri', 'email'=>'gita@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'🧕', 'plan'=>'Monthly', 'branch_id'=>'B2', 'streak'=>3, 'spend'=>700000, 'total_classes'=>15, 'status'=>'active'],
+            ['id' => 18, 'name'=>'Master Lee', 'email'=>'lee@gym.com', 'password'=>Hash::make('123'), 'role'=>'trainer', 'avatar'=>'🥋', 'plan'=>null, 'branch_id'=>'B2', 'streak'=>0, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 812-7777-8888', 'address'=>'Badung', 'trainer_id'=>'T9', 'status'=>'active'],
+            ['id' => 19, 'name'=>'Coach Made', 'email'=>'made@gym.com', 'password'=>Hash::make('123'), 'role'=>'trainer', 'avatar'=>'🤼', 'plan'=>null, 'branch_id'=>'B1', 'streak'=>0, 'spend'=>0, 'total_classes'=>0, 'phone'=>'+62 813-5555-6666', 'address'=>'Badung', 'trainer_id'=>'T10', 'status'=>'active'],
+            ['id' => 10, 'name'=>'Alex Fitria', 'email'=>'alex@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'🧑‍🎤', 'plan'=>'Bulanan', 'branch_id'=>'B1', 'streak'=>17, 'join_date'=>'25 Mar 2024', 'spend'=>1250000, 'total_classes'=>14, 'phone'=>'+62 812-3456-7890', 'dob'=>'15 Mar 1995', 'address'=>'Seminyak', 'status'=>'active'],
+            ['id' => 11, 'name'=>'Rina Dewi', 'email'=>'rina@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'👩‍🎤', 'plan'=>'Bulanan', 'branch_id'=>'B2', 'streak'=>14, 'join_date'=>'22 Aug 2024', 'spend'=>3200000, 'total_classes'=>47, 'phone'=>'+62 821-5678-9012', 'dob'=>'22 Aug 1992', 'address'=>'Canggu', 'status'=>'active'],
+            ['id' => 12, 'name'=>'Budi Santoso', 'email'=>'budi@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'🧑', 'plan'=>'Bulanan', 'branch_id'=>'B1', 'streak'=>2, 'join_date'=>'20 Mar 2025', 'spend'=>350000, 'total_classes'=>4, 'status'=>'active'],
+            ['id' => 13, 'name'=>'Citra Kirana', 'email'=>'citra@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'👩', 'plan'=>'Per Kedatangan', 'branch_id'=>'B2', 'streak'=>0, 'join_date'=>'10 Jan 2025', 'spend'=>150000, 'total_classes'=>2, 'status'=>'inactive'],
+            ['id' => 14, 'name'=>'Dodi Pratama', 'email'=>'dodi@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'👨', 'plan'=>'Bulanan', 'branch_id'=>'B3', 'streak'=>5, 'join_date'=>'22 Dec 2023', 'spend'=>900000, 'total_classes'=>20, 'status'=>'active'],
+            ['id' => 15, 'name'=>'Eka Putri', 'email'=>'eka@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'👱‍♀️', 'plan'=>'Bulanan', 'branch_id'=>'B4', 'streak'=>12, 'spend'=>3000000, 'total_classes'=>50, 'status'=>'active'],
+            ['id' => 16, 'name'=>'Fajar Nugraha', 'email'=>'fajar@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'🧔', 'plan'=>'Bulanan', 'branch_id'=>'B1', 'streak'=>0, 'spend'=>350000, 'total_classes'=>1, 'status'=>'inactive'],
+            ['id' => 17, 'name'=>'Gita Savitri', 'email'=>'gita@gym.com', 'password'=>Hash::make('123'), 'role'=>'member', 'avatar'=>'🧕', 'plan'=>'Bulanan', 'branch_id'=>'B2', 'streak'=>3, 'spend'=>700000, 'total_classes'=>15, 'status'=>'active'],
         ];
         foreach ($users as $user) { User::create($user); }
 
@@ -88,43 +91,45 @@ class DatabaseSeeder extends Seeder
         foreach ($products as $product) { Product::create($product); }
 
         // ====================================================================
+        // 2B. PAKET KEANGGOTAAN — Per Kedatangan & Bulanan (tanpa ikatan tahunan)
+        // ====================================================================
+        $plans = [
+            ['id'=>'visit', 'name'=>'Per Kedatangan', 'price'=>75000, 'period'=>'/kali', 'badge'=>'', 'icon'=>'🎯', 'color'=>'#00E5FF'],
+            ['id'=>'monthly', 'name'=>'Bulanan', 'price'=>350000, 'period'=>'/bulan', 'badge'=>'TANPA IKATAN', 'icon'=>'📅', 'color'=>'#CCFF00'],
+        ];
+        foreach ($plans as $pl) { Plan::create($pl); }
+
+        // ====================================================================
         // 3. JADWAL KELAS 7 HARI (Berbeda setiap hari + Online)
         // ====================================================================
         $classes = [
+            // SENIN
             ['id'=>'C101', 'branch_id'=>'B1', 'name'=>'HIIT INFERNO', 'trainer_id'=>'T1', 'time'=>'06:00', 'day'=>'Mon', 'duration'=>'45 min', 'slots'=>5, 'total'=>15, 'icon'=>'🔥', 'intensity'=>'HIGH', 'category'=>'HIIT', 'color'=>'#FF3131', 'status'=>'active'],
-            ['id'=>'C102', 'branch_id'=>'B2', 'name'=>'YOGA FLOW', 'trainer_id'=>'T2', 'time'=>'07:30', 'day'=>'Mon', 'duration'=>'60 min', 'slots'=>8, 'total'=>12, 'icon'=>'🧘', 'intensity'=>'LOW', 'category'=>'Yoga', 'color'=>'#B39DDB', 'status'=>'active'],
-            ['id'=>'C103', 'branch_id'=>'B3', 'name'=>'BOXING PRO', 'trainer_id'=>'T3', 'time'=>'17:00', 'day'=>'Mon', 'duration'=>'60 min', 'slots'=>2, 'total'=>10, 'icon'=>'🥊', 'intensity'=>'HIGH', 'category'=>'Boxing', 'color'=>'#FF3131', 'status'=>'active'],
-            // Kelas Online dengan Youtube Link agar Video Player di React berfungsi!
-            ['id'=>'CO10', 'branch_id'=>'ONLINE', 'name'=>'VIRTUAL BASIC MARTIAL ARTS', 'trainer_id'=>'T5', 'time'=>'19:00', 'day'=>'Mon', 'duration'=>'60 min', 'slots'=>90, 'total'=>100, 'icon'=>'💻', 'intensity'=>'MED', 'category'=>'Boxing', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://www.youtube.com/watch?v=inpok4MKVLM'],
-
-            ['id'=>'C201', 'branch_id'=>'B4', 'name'=>'STRENGTH BEAST', 'trainer_id'=>'T7', 'time'=>'08:00', 'day'=>'Tue', 'duration'=>'60 min', 'slots'=>1, 'total'=>10, 'icon'=>'🏋️', 'intensity'=>'HIGH', 'category'=>'Strength', 'color'=>'#FF5C00', 'status'=>'active'],
-            ['id'=>'C202', 'branch_id'=>'B2', 'name'=>'PILATES SCULPT', 'trainer_id'=>'T4', 'time'=>'10:00', 'day'=>'Tue', 'duration'=>'50 min', 'slots'=>5, 'total'=>15, 'icon'=>'🧘', 'intensity'=>'MED', 'category'=>'Pilates', 'color'=>'#B39DDB', 'status'=>'active'],
-            ['id'=>'C203', 'branch_id'=>'B1', 'name'=>'ZUMBA PARTY', 'trainer_id'=>'T6', 'time'=>'18:00', 'day'=>'Tue', 'duration'=>'60 min', 'slots'=>15, 'total'=>30, 'icon'=>'💃', 'intensity'=>'MED', 'category'=>'Dance', 'color'=>'#FFD700', 'status'=>'active'],
-            // Kelas Online dengan Zoom Link
-            ['id'=>'CO20', 'branch_id'=>'ONLINE', 'name'=>'VIRTUAL YOGA', 'trainer_id'=>'T2', 'time'=>'07:00', 'day'=>'Tue', 'duration'=>'45 min', 'slots'=>40, 'total'=>50, 'icon'=>'💻', 'intensity'=>'LOW', 'category'=>'Yoga', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://zoom.us/j/tue123'],
-
-            ['id'=>'C301', 'branch_id'=>'B1', 'name'=>'SAVATE KICKBOXING', 'trainer_id'=>'T5', 'time'=>'16:00', 'day'=>'Wed', 'duration'=>'90 min', 'slots'=>10, 'total'=>20, 'icon'=>'🥊', 'intensity'=>'HIGH', 'category'=>'Boxing', 'color'=>'#FF5C00', 'status'=>'active'],
-            ['id'=>'C302', 'branch_id'=>'B3', 'name'=>'CORE CRUSHER', 'trainer_id'=>'T4', 'time'=>'09:00', 'day'=>'Wed', 'duration'=>'45 min', 'slots'=>6, 'total'=>15, 'icon'=>'⚡', 'intensity'=>'MED', 'category'=>'Pilates', 'color'=>'#CCFF00', 'status'=>'active'],
-            ['id'=>'C303', 'branch_id'=>'B4', 'name'=>'MOBILITY FLOW', 'trainer_id'=>'T8', 'time'=>'17:30', 'day'=>'Wed', 'duration'=>'60 min', 'slots'=>12, 'total'=>20, 'icon'=>'🌿', 'intensity'=>'LOW', 'category'=>'Yoga', 'color'=>'#00FF85', 'status'=>'active'],
-            ['id'=>'CO30', 'branch_id'=>'ONLINE', 'name'=>'VIRTUAL HIIT', 'trainer_id'=>'T1', 'time'=>'19:00', 'day'=>'Wed', 'duration'=>'45 min', 'slots'=>80, 'total'=>100, 'icon'=>'💻', 'intensity'=>'HIGH', 'category'=>'HIIT', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://zoom.us/j/wed123'],
-
-            ['id'=>'C401', 'branch_id'=>'B2', 'name'=>'POWER LIFT', 'trainer_id'=>'T7', 'time'=>'07:00', 'day'=>'Thu', 'duration'=>'60 min', 'slots'=>3, 'total'=>8, 'icon'=>'🏋️', 'intensity'=>'HIGH', 'category'=>'Strength', 'color'=>'#FFD700', 'status'=>'active'],
-            ['id'=>'C402', 'branch_id'=>'B1', 'name'=>'MUAY THAI', 'trainer_id'=>'T3', 'time'=>'18:00', 'day'=>'Thu', 'duration'=>'60 min', 'slots'=>4, 'total'=>12, 'icon'=>'🥊', 'intensity'=>'HIGH', 'category'=>'Boxing', 'color'=>'#FF3131', 'status'=>'active'],
-            ['id'=>'CO40', 'branch_id'=>'ONLINE', 'name'=>'VIRTUAL PILATES', 'trainer_id'=>'T4', 'time'=>'08:00', 'day'=>'Thu', 'duration'=>'50 min', 'slots'=>30, 'total'=>50, 'icon'=>'💻', 'intensity'=>'MED', 'category'=>'Pilates', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://zoom.us/j/thu123'],
-
-            ['id'=>'C501', 'branch_id'=>'B3', 'name'=>'FUNCTIONAL FIT', 'trainer_id'=>'T1', 'time'=>'06:30', 'day'=>'Fri', 'duration'=>'50 min', 'slots'=>5, 'total'=>15, 'icon'=>'⚡', 'intensity'=>'HIGH', 'category'=>'HIIT', 'color'=>'#00FF85', 'status'=>'active'],
-            ['id'=>'C502', 'branch_id'=>'B4', 'name'=>'VINYASA YOGA', 'trainer_id'=>'T8', 'time'=>'16:00', 'day'=>'Fri', 'duration'=>'60 min', 'slots'=>10, 'total'=>20, 'icon'=>'🧘', 'intensity'=>'LOW', 'category'=>'Yoga', 'color'=>'#B39DDB', 'status'=>'active'],
-            ['id'=>'CO50', 'branch_id'=>'ONLINE', 'name'=>'VIRTUAL STRENGTH', 'trainer_id'=>'T7', 'time'=>'19:00', 'day'=>'Fri', 'duration'=>'45 min', 'slots'=>75, 'total'=>100, 'icon'=>'💻', 'intensity'=>'HIGH', 'category'=>'Strength', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://zoom.us/j/fri123'],
-
-            ['id'=>'C601', 'branch_id'=>'B1', 'name'=>'SAVATE KICKBOXING', 'trainer_id'=>'T5', 'time'=>'10:00', 'day'=>'Sat', 'duration'=>'90 min', 'slots'=>8, 'total'=>20, 'icon'=>'🥊', 'intensity'=>'HIGH', 'category'=>'Boxing', 'color'=>'#FF5C00', 'status'=>'active'],
-            ['id'=>'C602', 'branch_id'=>'B2', 'name'=>'WEEKEND WARRIOR', 'trainer_id'=>'T1', 'time'=>'08:00', 'day'=>'Sat', 'duration'=>'60 min', 'slots'=>0, 'total'=>20, 'icon'=>'🔥', 'intensity'=>'HIGH', 'category'=>'HIIT', 'color'=>'#FF3131', 'status'=>'active'],
-            ['id'=>'CO60', 'branch_id'=>'ONLINE', 'name'=>'VIRTUAL DANCE', 'trainer_id'=>'T6', 'time'=>'16:00', 'day'=>'Sat', 'duration'=>'60 min', 'slots'=>40, 'total'=>50, 'icon'=>'💻', 'intensity'=>'MED', 'category'=>'Dance', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://zoom.us/j/sat123'],
-
-            ['id'=>'C701', 'branch_id'=>'B4', 'name'=>'RECOVERY FLOW', 'trainer_id'=>'T2', 'time'=>'09:00', 'day'=>'Sun', 'duration'=>'60 min', 'slots'=>15, 'total'=>25, 'icon'=>'🌿', 'intensity'=>'LOW', 'category'=>'Yoga', 'color'=>'#00FF85', 'status'=>'active'],
-            ['id'=>'C702', 'branch_id'=>'B1', 'name'=>'KETTLEBELL BLAST', 'trainer_id'=>'T7', 'time'=>'16:00', 'day'=>'Sun', 'duration'=>'45 min', 'slots'=>4, 'total'=>12, 'icon'=>'🏋️', 'intensity'=>'HIGH', 'category'=>'Strength', 'color'=>'#FF5C00', 'status'=>'active'],
-            ['id'=>'CO70', 'branch_id'=>'ONLINE', 'name'=>'VIRTUAL MEDITATION', 'trainer_id'=>'T8', 'time'=>'20:00', 'day'=>'Sun', 'duration'=>'30 min', 'slots'=>80, 'total'=>100, 'icon'=>'💻', 'intensity'=>'LOW', 'category'=>'Yoga', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://zoom.us/j/sun123'],
-
-            ['id'=>'C801', 'branch_id'=>'B1', 'name'=>'TODAY BURN', 'trainer_id'=>'T1', 'time'=>'09:00', 'day'=>date('D'), 'duration'=>'60 min', 'slots'=>10, 'total'=>20, 'icon'=>'🔥', 'intensity'=>'HIGH', 'category'=>'HIIT', 'color'=>'#FF3131', 'status'=>'active'],
+            ['id'=>'C102', 'branch_id'=>'B2', 'name'=>'KICKBOXING PRO', 'trainer_id'=>'T3', 'time'=>'07:00', 'day'=>'Mon', 'duration'=>'60 min', 'slots'=>5, 'total'=>10, 'icon'=>'🦵', 'intensity'=>'HIGH', 'category'=>'Kickboxing', 'color'=>'#FF5C00', 'status'=>'active'],
+            ['id'=>'C103', 'branch_id'=>'B2', 'name'=>'TAEKWONDO', 'trainer_id'=>'T9', 'time'=>'16:00', 'day'=>'Mon', 'duration'=>'60 min', 'slots'=>8, 'total'=>15, 'icon'=>'🥋', 'intensity'=>'MED', 'category'=>'Taekwondo', 'color'=>'#4FC3F7', 'status'=>'active'],
+            // SELASA
+            ['id'=>'C201', 'branch_id'=>'B1', 'name'=>'FLEXIBILITY FLOW', 'trainer_id'=>'T2', 'time'=>'07:30', 'day'=>'Tue', 'duration'=>'60 min', 'slots'=>8, 'total'=>12, 'icon'=>'🧘', 'intensity'=>'LOW', 'category'=>'Flexibility', 'color'=>'#B39DDB', 'status'=>'active'],
+            ['id'=>'C202', 'branch_id'=>'B1', 'name'=>'WRESTLING', 'trainer_id'=>'T10', 'time'=>'17:00', 'day'=>'Tue', 'duration'=>'60 min', 'slots'=>8, 'total'=>12, 'icon'=>'🤼', 'intensity'=>'MED', 'category'=>'Wrestling', 'color'=>'#B39DDB', 'status'=>'active'],
+            ['id'=>'C203', 'branch_id'=>'B4', 'name'=>'MIND & BODY HEALING', 'trainer_id'=>'T8', 'time'=>'18:00', 'day'=>'Tue', 'duration'=>'60 min', 'slots'=>6, 'total'=>12, 'icon'=>'🌿', 'intensity'=>'LOW', 'category'=>'Mind & Body Healing', 'color'=>'#00FF85', 'status'=>'active'],
+            // RABU
+            ['id'=>'C301', 'branch_id'=>'B2', 'name'=>'BOXING PRO', 'trainer_id'=>'T3', 'time'=>'07:00', 'day'=>'Wed', 'duration'=>'60 min', 'slots'=>5, 'total'=>10, 'icon'=>'🥊', 'intensity'=>'HIGH', 'category'=>'Boxing', 'color'=>'#FF3131', 'status'=>'active'],
+            ['id'=>'C302', 'branch_id'=>'B1', 'name'=>'MMA COMBAT', 'trainer_id'=>'T3', 'time'=>'19:00', 'day'=>'Wed', 'duration'=>'90 min', 'slots'=>6, 'total'=>12, 'icon'=>'⚔️', 'intensity'=>'HIGH', 'category'=>'MMA', 'color'=>'#FFD700', 'status'=>'active'],
+            // KAMIS
+            ['id'=>'C401', 'branch_id'=>'B2', 'name'=>'TAEKWONDO KIDS', 'trainer_id'=>'T9', 'time'=>'16:00', 'day'=>'Thu', 'duration'=>'60 min', 'slots'=>8, 'total'=>15, 'icon'=>'🥋', 'intensity'=>'MED', 'category'=>'Taekwondo', 'color'=>'#4FC3F7', 'status'=>'active'],
+            ['id'=>'C402', 'branch_id'=>'B1', 'name'=>'HIIT NIGHT', 'trainer_id'=>'T1', 'time'=>'18:00', 'day'=>'Thu', 'duration'=>'45 min', 'slots'=>6, 'total'=>15, 'icon'=>'🔥', 'intensity'=>'HIGH', 'category'=>'HIIT', 'color'=>'#FF3131', 'status'=>'active'],
+            // JUMAT
+            ['id'=>'C501', 'branch_id'=>'B1', 'name'=>'FLEXIBILITY & MOBILITY', 'trainer_id'=>'T2', 'time'=>'17:30', 'day'=>'Fri', 'duration'=>'60 min', 'slots'=>10, 'total'=>15, 'icon'=>'🧘', 'intensity'=>'LOW', 'category'=>'Flexibility', 'color'=>'#B39DDB', 'status'=>'active'],
+            // SABTU
+            ['id'=>'C601', 'branch_id'=>'B2', 'name'=>'KICKBOXING OPEN', 'trainer_id'=>'T3', 'time'=>'08:00', 'day'=>'Sat', 'duration'=>'60 min', 'slots'=>10, 'total'=>15, 'icon'=>'🦵', 'intensity'=>'HIGH', 'category'=>'Kickboxing', 'color'=>'#FF5C00', 'status'=>'active'],
+            ['id'=>'C602', 'branch_id'=>'B4', 'name'=>'MIND & BODY HEALING', 'trainer_id'=>'T8', 'time'=>'09:00', 'day'=>'Sat', 'duration'=>'60 min', 'slots'=>10, 'total'=>15, 'icon'=>'🌿', 'intensity'=>'LOW', 'category'=>'Mind & Body Healing', 'color'=>'#00FF85', 'status'=>'active'],
+            ['id'=>'C603', 'branch_id'=>'B1', 'name'=>'WRESTLING', 'trainer_id'=>'T10', 'time'=>'10:00', 'day'=>'Sat', 'duration'=>'60 min', 'slots'=>8, 'total'=>12, 'icon'=>'🤼', 'intensity'=>'MED', 'category'=>'Wrestling', 'color'=>'#B39DDB', 'status'=>'active'],
+            ['id'=>'C604', 'branch_id'=>'B1', 'name'=>'MMA SPARRING', 'trainer_id'=>'T3', 'time'=>'19:00', 'day'=>'Sat', 'duration'=>'90 min', 'slots'=>6, 'total'=>10, 'icon'=>'⚔️', 'intensity'=>'HIGH', 'category'=>'MMA', 'color'=>'#FFD700', 'status'=>'active'],
+            // MINGGU
+            ['id'=>'C701', 'branch_id'=>'B2', 'name'=>'BOXING TECHNICAL', 'trainer_id'=>'T3', 'time'=>'09:00', 'day'=>'Sun', 'duration'=>'60 min', 'slots'=>8, 'total'=>12, 'icon'=>'🥊', 'intensity'=>'MED', 'category'=>'Boxing', 'color'=>'#FF3131', 'status'=>'active'],
+            // ONLINE (dengan video agar player React berfungsi)
+            ['id'=>'CO10', 'branch_id'=>'ONLINE', 'name'=>'VIRTUAL HIIT', 'trainer_id'=>'T1', 'time'=>'19:00', 'day'=>'Mon', 'duration'=>'45 min', 'slots'=>80, 'total'=>100, 'icon'=>'💻', 'intensity'=>'HIGH', 'category'=>'HIIT', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://www.youtube.com/watch?v=inpok4MKVLM'],
+            ['id'=>'CO20', 'branch_id'=>'ONLINE', 'name'=>'HOME FLEXIBILITY', 'trainer_id'=>'T2', 'time'=>'19:00', 'day'=>'Tue', 'duration'=>'45 min', 'slots'=>60, 'total'=>80, 'icon'=>'💻', 'intensity'=>'LOW', 'category'=>'Flexibility', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://zoom.us/j/tue123'],
+            ['id'=>'CO30', 'branch_id'=>'ONLINE', 'name'=>'VIRTUAL MIND & BODY', 'trainer_id'=>'T8', 'time'=>'20:00', 'day'=>'Sun', 'duration'=>'45 min', 'slots'=>80, 'total'=>100, 'icon'=>'💻', 'intensity'=>'LOW', 'category'=>'Mind & Body Healing', 'color'=>'#4FC3F7', 'status'=>'active', 'video_url'=>'https://zoom.us/j/sun123'],
         ];
         foreach ($classes as $cls) { GymClass::create($cls); }
 

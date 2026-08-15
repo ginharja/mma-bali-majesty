@@ -13,7 +13,10 @@
                 ?>
             </div>
 
-            <h3 style="color: var(--red-neon); font-size: 2rem; margin-bottom: 10px; font-family: var(--font-heading);">MAJESTY BALI BALI</h3>
+            <h3 style="color: var(--red-neon); font-size: 2rem; margin-bottom: 10px; font-family: var(--font-heading);">MAJESTY BALI</h3>
+            <p style="color: var(--gold-premium); font-family: var(--font-heading); font-size: 1.4rem; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 8px 0;">⚡ 3 Bulan Menguasai yang Kami Ajarkan</p>
+            <p style="color: #888; font-size: 1rem; margin: 0;">Membangun generasi petarung tangguh dan berprestasi.</p>
+            <p style="color: #666; font-size: 0.9rem; margin: 12px 0 0;">Jalan Tunjung Saring Gang Padma No. 10, Denpasar Barat, Bali &nbsp;·&nbsp; WA 0878-3887-2777 (Gin)</p>
             <p style="color: #888; font-size: 1rem; margin: 0;">&copy; <?php echo date('Y'); ?>. Membangun generasi petarung tangguh dan berprestasi.</p>
         </div>
     </footer>

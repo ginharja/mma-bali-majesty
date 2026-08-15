@@ -6,11 +6,12 @@
   'use strict';
 
   const CFG = window.MAJESTY_CONFIG || {
-    brand: 'MAJESTY BALI', brandSmall: 'BALI', wa: '6281234567890',
-    waDisplay: '0812-3456-7890', email: 'admin@learnmmabalimajesty.com',
-    address: 'Denpasar, Bali, Indonesia', addressNote: '',
-    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Denpasar+Bali+Indonesia',
-    classes: []
+    brand: 'MAJESTY BALI', brandSmall: 'BALI', wa: '6287838872777', waName: 'Gin',
+    waDisplay: '0878-3887-2777', email: 'admin@learnmmabalimajesty.com',
+    address: 'Jalan Tunjung Saring Gang Padma No. 10, Denpasar Barat, Bali', addressNote: '',
+    jargon: '3 Bulan Menguasai yang Kami Ajarkan',
+    mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Jalan+Tunjung+Saring+Gang+Padma+No.+10+Denpasar+Barat+Bali',
+    classes: [], plans: []
   };
 
   /* ── Terapkan konfigurasi ke elemen [data-cfg] ────────── */
@@ -20,10 +21,14 @@
     heroSubtitle: CFG.heroSubtitle,
     heroTitle1: CFG.heroTitle1,
     heroTitle2: CFG.heroTitle2,
+    jargon: CFG.jargon,
+    waName: CFG.waName,
     waDisplay: CFG.waDisplay,
+    waFull: (CFG.waName ? CFG.waName + ' — ' : '') + CFG.waDisplay,
     email: CFG.email,
     address: CFG.address,
     addressNote: CFG.addressNote,
+    membershipNote: CFG.membershipNote,
     wa: 'https://wa.me/' + CFG.wa,
     emailHref: 'mailto:' + CFG.email,
     maps: CFG.mapsUrl
@@ -55,6 +60,18 @@
   const kelasSelect = document.getElementById('program_pilihan');
   if (kelasSelect && Array.isArray(CFG.classes)) {
     kelasSelect.innerHTML = CFG.classes.map((c) => `<option value="${c.name}">${c.name}</option>`).join('');
+  }
+
+  /* ── Render paket keanggotaan (per kedatangan / bulanan) ── */
+  const planList = document.getElementById('planList');
+  if (planList && Array.isArray(CFG.plans) && CFG.plans.length) {
+    planList.innerHTML = CFG.plans.map((p, i) => `
+      <div class="plan-card${p.badge ? ' plan-card-hot' : ''}">
+        ${p.badge ? `<span class="plan-badge">${p.badge}</span>` : ''}
+        <h4>${p.name}</h4>
+        <div class="plan-price">${p.price} <small>${p.period || ''}</small></div>
+        <p class="plan-note">${p.note || ''}</p>
+      </div>`).join('');
   }
 
   /* ── Tahun footer ─────────────────────────────────────── */

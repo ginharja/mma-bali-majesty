@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
    MAJESTY BALI — Konfigurasi terpusat (anti-hardcode)
    Ubah semua nilai penting DI SINI saja, lalu seluruh situs
-   (teks brand, kontak, kelas, form) otomatis menyesuaikan.
+   (teks brand, kontak, jargon, kelas, paket) otomatis menyesuaikan.
    ═══════════════════════════════════════════════════════════ */
 window.MAJESTY_CONFIG = {
   // ── Brand ──
@@ -12,13 +12,24 @@ window.MAJESTY_CONFIG = {
   heroTitle1: "Kombat & Fitness Camp",
   heroTitle2: "di Pulau Dewata",
 
-  // ── Kontak resmi (ganti dengan nomor/alamat asli) ──
-  wa: "6281234567890",        // format internasional, tanpa +
-  waDisplay: "0812-3456-7890",
+  // ── Jargon resmi ──
+  jargon: "3 Bulan Menguasai yang Kami Ajarkan",
+
+  // ── Kontak resmi ──
+  wa: "6287838872777",              // WhatsApp admin — atas nama Gin
+  waName: "Gin",
+  waDisplay: "0878-3887-2777",
   email: "admin@learnmmabalimajesty.com",
-  address: "Denpasar, Bali, Indonesia",
-  addressNote: "(isi alamat dojo asli di config.js)",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Denpasar+Bali+Indonesia",
+  address: "Jalan Tunjung Saring Gang Padma No. 10, Denpasar Barat, Bali",
+  addressNote: "",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Jalan+Tunjung+Saring+Gang+Padma+No.+10+Denpasar+Barat+Bali",
+
+  // ── Model membership: PER KEDATANGAN / BULANAN (tanpa ikatan tahunan) ──
+  membershipNote: "Membership fleksibel — bayar per kedatangan atau bulanan. Tanpa ikatan tahunan seperti tempat lain.",
+  plans: [
+    { name: "Per Kedatangan", price: "Rp 75rb", period: "/kali", badge: "", note: "Bayar setiap datang latihan — tanpa komitmen." },
+    { name: "Bulanan", price: "Rp 350rb", period: "/bulan", badge: "TANPA IKATAN", note: "Akses semua kelas 8 disiplin selama sebulan. Bisa berhenti kapan saja." }
+  ],
 
   // ── Daftar kelas yang diadakan (8 kelas resmi) ──
   classes: [
