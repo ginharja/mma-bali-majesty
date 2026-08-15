@@ -24,6 +24,15 @@ window.MAJESTY_CONFIG = {
   addressNote: "",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Jalan+Tunjung+Saring+Gang+Padma+No.+10+Denpasar+Barat+Bali",
 
+  // ── URL PRODUCTION (pemisahan agar tidak bentrok) ──
+  // WordPress  → https://learnmmabalimajesty.com/          (root, wp-content)
+  // Frontend   → https://learnmmabalimajesty.com/app/      (PWA statis ini)
+  // Laravel API→ https://learnmmabalimajesty.com/api/      (diarahkan ke public/)
+  siteUrl: "https://learnmmabalimajesty.com",
+  feUrl: "https://learnmmabalimajesty.com/app/",
+  apiBaseUrl: "https://learnmmabalimajesty.com/api",
+  wpUrl: "https://learnmmabalimajesty.com",
+
   // ── Model membership: PER KEDATANGAN / BULANAN (tanpa ikatan tahunan) ──
   membershipNote: "Membership fleksibel — bayar per kedatangan atau bulanan. Tanpa ikatan tahunan seperti tempat lain.",
   plans: [

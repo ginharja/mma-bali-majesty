@@ -134,7 +134,21 @@ Situs `web/` adalah **statis murni** — paling ringan dan paling aman untuk hos
 
 > **Spek hosting:** paket `digita50_economic` (quota 250 MB) **cukup** untuk situs statis ini (±2 MB). Jika `api/` (Laravel + database) ikut di-hosting di paket yang sama, disarankan upgrade paket (Laravel + MySQL + log bisa memakan ratusan MB) atau host API di VPS terpisah.
 
+
 ---
+
+## 🌐 Arsitektur URL Production (tidak saling bentrok)
+
+| Aplikasi | URL | Lokasi server |
+|---|---|---|
+| WordPress | https://learnmmabalimajesty.com/ | `public_html/` (root) |
+| Frontend (PWA) | https://learnmmabalimajesty.com/app/ | `public_html/app/` |
+| Laravel API | https://learnmmabalimajesty.com/api/ | `public_html/api/` (rewrite ke `public/`) |
+
+- Folder `/app/` & `/api/` adalah direktori fisik → rewrite WordPress otomatis melewatinya (tidak bentrok).
+- Kunci API memakai header `x-api-key` (nilai di `.env` Laravel = `VITE_API_KEY` di app).
+- `.env`, `artisan`, `composer.*` di `/api/` diblokir akses langsung oleh `.htaccess` (403).
+- Status deploy: ✅ FE live di `/app/` · ✅ API live di `/api/` (menunggu isi DB di cPanel) · ✅ Tema WP live.
 
 ## 🔐 Keamanan (wajib dibaca)
 

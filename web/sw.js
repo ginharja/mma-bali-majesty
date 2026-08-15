@@ -1,5 +1,5 @@
 /* mma majesty BALI — Service Worker (PWA offline) */
-const CACHE = 'mma-majesty-v1';
+const CACHE = 'majesty-bali-v2';
 const CORE_ASSETS = [
   './',
   './index.html',
